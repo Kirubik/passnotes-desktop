@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>PassNotes Desktop</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="ThemeStandard" xml:space="preserve">
+    <value>Стандартная</value>
+  </data>
+  <data name="ThemeLight" xml:space="preserve">
+    <value>Шалфей</value>
+  </data>
+  <data name="ThemeArcticWhite" xml:space="preserve">
+    <value>Иней</value>
+  </data>
+  <data name="ThemeMidnightSlate" xml:space="preserve">
+    <value>Полночь</value>
+  </data>
+  <data name="ThemeAmberCircuit" xml:space="preserve">
+    <value>Янтарь</value>
+  </data>
+  <data name="Russian" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>Разблокировка</value>
+  </data>
+  <data name="CreateVault" xml:space="preserve">
+    <value>Создание хранилища</value>
+  </data>
+  <data name="MasterPassword" xml:space="preserve">
+    <value>Мастер-пароль:</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Повторите пароль:</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="UnsavedChangesTitle" xml:space="preserve">
+    <value>Несохранённые изменения</value>
+  </data>
+  <data name="UnsavedChangesMessage" xml:space="preserve">
+    <value>У вас есть несохранённые изменения. Сохранить перед закрытием?</value>
+  </data>
+  <data name="RestoreUnsavedEditsTitle" xml:space="preserve">
+    <value>Восстановить несохранённые изменения</value>
+  </data>
+  <data name="RestoreUnsavedEditsMessage" xml:space="preserve">
+    <value>Автоблокировка закрыла окно редактирования с несохранёнными изменениями. Восстановить его сейчас?</value>
+  </data>
+  <data name="RestoreUnsavedSettingsTitle" xml:space="preserve">
+    <value>Восстановить несохранённые настройки</value>
+  </data>
+  <data name="RestoreUnsavedSettingsMessage" xml:space="preserve">
+    <value>Блокировка/автоблокировка закрыла окно настроек с несохранёнными изменениями. Восстановить его сейчас?</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск:</value>
+  </data>
+  <data name="EntrySearchPlaceholder" xml:space="preserve">
+    <value>Поиск записей…</value>
+  </data>
+  <data name="SearchResults" xml:space="preserve">
+    <value>Результаты поиска</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="CopyUsername" xml:space="preserve">
+    <value>Копировать логин</value>
+  </data>
+  <data name="CopyPassword" xml:space="preserve">
+    <value>Копировать пароль</value>
+  </data>
+  <data name="CopyUrl" xml:space="preserve">
+    <value>Копировать ссылку</value>
+  </data>
+  <data name="TitleCol" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="UsernameCol" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="UrlCol" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="FolderCol" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="UpdatedCol" xml:space="preserve">
+    <value>Обновлено</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>Часовой пояс:</value>
+  </data>
+  <data name="TimeZoneSystem" xml:space="preserve">
+    <value>Системный</value>
+  </data>
+  <data name="TimeZoneTooltip" xml:space="preserve">
+    <value>Часовой пояс, который используется для отображения дат и времени (по умолчанию — системный).</value>
+  </data>
+  <data name="EntryAddTitle" xml:space="preserve">
+    <value>Добавить запись</value>
+  </data>
+  <data name="EntryEditTitle" xml:space="preserve">
+    <value>Изменить запись</value>
+  </data>
+  <data name="FieldTitle" xml:space="preserve">
+    <value>Название:</value>
+  </data>
+  <data name="FieldUsername" xml:space="preserve">
+    <value>Логин:</value>
+  </data>
+  <data name="FieldPassword" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="FieldUrl" xml:space="preserve">
+    <value>Ссылка:</value>
+  </data>
+  <data name="OpenUrlInBrowser" xml:space="preserve">
+    <value>Открыть ссылку в браузере</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Инфо</value>
+  </data>
+  <data name="BadPassword" xml:space="preserve">
+    <value>Неверный пароль.</value>
+  </data>
+  <data name="EmptyPassword" xml:space="preserve">
+    <value>Пароль не может быть пустым.</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Пароли не совпадают.</value>
+  </data>
+  <data name="NeedSelect" xml:space="preserve">
+    <value>Сначала выберите запись.</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Удалить выбранную запись?</value>
+  </data>
+  <data name="ConfirmDeleteMany" xml:space="preserve">
+    <value>Удалить выбранные записи ({0})?</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Скопировано в буфер обмена.</value>
+  </data>
+  <data name="CopiedLogin" xml:space="preserve">
+    <value>Логин скопирован в буфер обмена.</value>
+  </data>
+  <data name="CopiedPassword" xml:space="preserve">
+    <value>Пароль скопирован в буфер обмена.</value>
+  </data>
+  <data name="CopyFailed" xml:space="preserve">
+    <value>Не удалось скопировать: буфер обмена занят.</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Сгенерировать</value>
+  </data>
+  <data name="FieldComment" xml:space="preserve">
+    <value>Комментарий:</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>Показать пароль</value>
+  </data>
+  <data name="HidePassword" xml:space="preserve">
+    <value>Скрыть пароль</value>
+  </data>
+  <data name="RowHeight" xml:space="preserve">
+  <value>Высота строк:</value>
+</data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Сменить пароль</value>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Сменить мастер‑пароль</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Старый пароль:</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Новый пароль:</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Пароль изменён.</value>
+  </data>
+  <data name="OldPasswordWrong" xml:space="preserve">
+    <value>Старый пароль неверный.</value>
+  </data>
+  <data name="PasswordSame" xml:space="preserve">
+    <value>Новый пароль должен отличаться от старого.</value>
+  </data>
+  <data name="OpenGenerator" xml:space="preserve">
+  <value>Генератор пароля</value>
+</data>
+  <data name="GeneratorTitle" xml:space="preserve">
+  <value>Генератор пароля</value>
+</data>
+  <data name="Length" xml:space="preserve">
+  <value>Длина:</value>
+</data>
+  <data name="Copy" xml:space="preserve">
+  <value>Копировать</value>
+</data>
+  <data name="CopyFileName" xml:space="preserve">
+  <value>Копировать имя файла</value>
+</data>
+  <data name="CopyFileNames" xml:space="preserve">
+    <value>Копировать имена файлов</value>
+  </data>
+  <data name="OpenCommentWindow" xml:space="preserve">
+    <value>Открыть комментарий в отдельном окне</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+  <value>Закрыть</value>
+</data>
+  <data name="CopyUsernameShort" xml:space="preserve">
+  <value>Коп. логин</value>
+</data>
+  <data name="CopyPasswordShort" xml:space="preserve">
+  <value>Коп. пароль</value>
+</data>
+  <data name="ChangePasswordShort" xml:space="preserve">
+  <value>Сменить</value>
+</data>
+  <data name="OpenGeneratorShort" xml:space="preserve">
+  <value>Генератор</value>
+</data>
+  <data name="Folders" xml:space="preserve">
+    <value>Папки</value>
+  </data>
+  <data name="FolderAll" xml:space="preserve">
+    <value>Все записи</value>
+  </data>
+  <data name="FolderNone" xml:space="preserve">
+    <value>Без папки</value>
+  </data>
+  <data name="ContextNotSelected" xml:space="preserve">
+    <value>Не выбрано</value>
+  </data>
+  <data name="ContextLabel" xml:space="preserve">
+    <value>Контекст</value>
+  </data>
+  <data name="FolderLabel" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="EntriesCountLabel" xml:space="preserve">
+    <value>Записей</value>
+  </data>
+  <data name="SelectedCountLabel" xml:space="preserve">
+    <value>Выбрано</value>
+  </data>
+  <data name="FolderNew" xml:space="preserve">
+    <value>Новая папка</value>
+  </data>
+  <data name="FolderRename" xml:space="preserve">
+    <value>Переименовать папку</value>
+  </data>
+  <data name="FolderDelete" xml:space="preserve">
+    <value>Удалить папку</value>
+  </data>
+  <data name="FolderMultiSelectMode" xml:space="preserve">
+    <value>Выбор папок</value>
+  </data>
+  <data name="FoldersCheckedCount" xml:space="preserve">
+    <value>Выбрано папок: {0}</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Снять выбор</value>
+  </data>
+  <data name="FolderNamePrompt" xml:space="preserve">
+    <value>Название папки:</value>
+  </data>
+  <data name="ConfirmDeleteFolder" xml:space="preserve">
+    <value>Удалить эту папку и все подпапки? Записи внутри будут перенесены в «{0}».</value>
+  </data>
+  <data name="ConfirmDeleteFolderMany" xml:space="preserve">
+    <value>Удалить выбранные папки ({0}) и все подпапки? Записи внутри будут перенесены в «{1}».</value>
+  </data>
+  <data name="ConfirmDeleteFolderEntriesMoved" xml:space="preserve">
+    <value>Записей будет перенесено в «{1}»: {0}.</value>
+  </data>
+  <data name="FolderNameEmpty" xml:space="preserve">
+    <value>Название папки не может быть пустым.</value>
+  </data>
+  <data name="FolderNotFound" xml:space="preserve">
+    <value>Папка не найдена</value>
+  </data>
+  <data name="FoldersRoot" xml:space="preserve">
+    <value>Папки</value>
+  </data>
+  <data name="FolderSearchPlaceholder" xml:space="preserve">
+    <value>Поиск папок…</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>Заблокировать</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Разблокировать</value>
+  </data>
+  <data name="BackupCreateNow" xml:space="preserve">
+    <value>Создать бэкап сейчас</value>
+  </data>
+  <data name="BackupOpenFolder" xml:space="preserve">
+    <value>Открыть папку бэкапов</value>
+  </data>
+  <data name="ImportVault" xml:space="preserve">
+    <value>Импорт…</value>
+  </data>
+  <data name="ImportVaultTitle" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="ImportVaultFilter" xml:space="preserve">
+    <value>Экспорт PassNotes (*.pnexp)|*.pnexp|Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="ImportVaultConfirm" xml:space="preserve">
+    <value>Текущее хранилище будет заменено выбранным экспортом.
+Перед импортом будет создана страховочная копия текущего хранилища.
+Продолжить?</value>
+  </data>
+  <data name="ImportVaultInvalidFile" xml:space="preserve">
+    <value>Неверный файл экспорта.</value>
+  </data>
+  <data name="ImportVaultSuccess" xml:space="preserve">
+    <value>Импорт выполнен.
+Данные перезагружены.</value>
+  </data>
+  <data name="ImportVaultPasswordMismatch" xml:space="preserve">
+    <value>Импорт отменён: текущий мастер‑пароль не подходит к выбранному экспорту.</value>
+  </data>
+  <data name="ImportVaultMissingAttachmentBlobFmt" xml:space="preserve">
+    <value>В экспорте отсутствует файл вложения: {0}</value>
+  </data>
+  <data name="ImportVaultSafetyBackupCreatedFmt" xml:space="preserve">
+    <value>Страховочная копия создана: {0}</value>
+  </data>
+  <data name="ImportVaultErrorFmt" xml:space="preserve">
+    <value>Не удалось импортировать: {0}</value>
+  </data>
+  <data name="ExportVault" xml:space="preserve">
+    <value>Экспорт…</value>
+  </data>
+  <data name="ExportVaultTitle" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="ExportVaultFilter" xml:space="preserve">
+    <value>Экспорт PassNotes (*.pnexp)|*.pnexp|Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="ExportVaultCreatedOpenFolderFmt" xml:space="preserve">
+    <value>Экспорт создан: {0}
+Открыть папку?</value>
+  </data>
+  <data name="ExportVaultErrorFmt" xml:space="preserve">
+    <value>Не удалось выполнить экспорт: {0}</value>
+  </data>
+  <data name="BackupTitle" xml:space="preserve">
+    <value>Бэкап</value>
+  </data>
+  <data name="BackupCreatedFmt" xml:space="preserve">
+    <value>Бэкап создан: {0}</value>
+  </data>
+  <data name="BackupSourceMissing" xml:space="preserve">
+    <value>Файл хранилища не найден.</value>
+  </data>
+  <data name="BackupCreateErrorFmt" xml:space="preserve">
+    <value>Не удалось создать бэкап: {0}</value>
+  </data>
+  <data name="BackupCreateAttachmentsCopyFailedFmt" xml:space="preserve">
+    <value>Бэкап не создан: не удалось скопировать вложения ({0}).</value>
+  </data>
+  <data name="BackupCreateMissingAttachmentsFolder" xml:space="preserve">
+    <value>Бэкап не создан: отсутствует папка вложений.</value>
+  </data>
+  <data name="BackupCreateMissingAttachmentBlobFmt" xml:space="preserve">
+    <value>Бэкап не создан: отсутствует файл вложения: {0}</value>
+  </data>
+  <data name="BackupOpenFolderErrorFmt" xml:space="preserve">
+    <value>Не удалось открыть папку бэкапов: {0}</value>
+  </data>
+  <data name="BackupRestore" xml:space="preserve">
+    <value>Восстановить из бэкапа…</value>
+  </data>
+  <data name="BackupRestoreTitle" xml:space="preserve">
+    <value>Восстановление</value>
+  </data>
+  <data name="BackupRestoreConfirm" xml:space="preserve">
+    <value>Текущее хранилище будет заменено выбранным бэкапом.
+Перед восстановлением будет создан резервный бэкап текущего хранилища.
+Продолжить?</value>
+  </data>
+  <data name="BackupRestoreFilter" xml:space="preserve">
+    <value>Бэкапы PassNotes (*.dat)|*.dat|Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="BackupRestoreSuccessRestart" xml:space="preserve">
+    <value>Восстановление завершено.
+Данные обновлены.</value>
+  </data>
+  <data name="BackupRestorePasswordMismatch" xml:space="preserve">
+    <value>Восстановление выполнено, но текущий мастер-пароль не подходит к восстановленному хранилищу.
+Приложение остаётся заблокированным. Нажми Unlock и введи пароль от выбранного бэкапа.</value>
+  </data>
+  <data name="BackupRestorePasswordMismatchToast" xml:space="preserve">
+    <value>Выбранный бэкап использует другой мастер-пароль.</value>
+  </data>
+  <data name="BackupRestoreMissingAttachmentsFolder" xml:space="preserve">
+    <value>В выбранном бэкапе отсутствует папка вложений.</value>
+  </data>
+  <data name="BackupRestoreMissingAttachmentBlobFmt" xml:space="preserve">
+    <value>В выбранном бэкапе отсутствует файл вложения: {0}</value>
+  </data>
+  <data name="BackupRestoreSuccessToast" xml:space="preserve">
+    <value>Восстановление из бэкапа выполнено.</value>
+  </data>
+  <data name="BackupRestoreSuccessToastWithBeforeFmt" xml:space="preserve">
+    <value>Восстановление выполнено. Бэкап до восстановления: {0}</value>
+  </data>
+  <data name="BackupRestoreBeforeCreatedFmt" xml:space="preserve">
+    <value>Резервный бэкап текущего хранилища: {0}</value>
+  </data>
+  <data name="BackupRestoreErrorFmt" xml:space="preserve">
+    <value>Не удалось восстановить из бэкапа: {0}</value>
+  </data>
+  <data name="OrphanCleanupMovedFmt" xml:space="preserve">
+    <value>Очистка вложений: в карантин {0}</value>
+  </data>
+  <data name="OrphanCleanupPurgedFmt" xml:space="preserve">
+    <value>Очистка вложений: удалено из карантина {0}</value>
+  </data>
+  <data name="OrphanCleanupMovedPurgedFmt" xml:space="preserve">
+    <value>Очистка вложений: в карантин {0}, удалено {1}</value>
+  </data>
+  <data name="OrphanCleanupFailedToast" xml:space="preserve">
+    <value>Очистка вложений: ошибка.</value>
+  </data>
+  <data name="AutoLockTimeout" xml:space="preserve">
+    <value>Автоблокировка (бездействие)</value>
+  </data>
+  <data name="AutoLockOff" xml:space="preserve">
+    <value>Выключено</value>
+  </data>
+  <data name="AutoLockMinutesFmt" xml:space="preserve">
+    <value>{0} мин</value>
+  </data>
+  <data name="ClipboardClearTimeout" xml:space="preserve">
+    <value>Очистка буфера обмена</value>
+  </data>
+  <data name="ClipboardClearOff" xml:space="preserve">
+    <value>Выключено</value>
+  </data>
+  <data name="ClipboardClearSecondsFmt" xml:space="preserve">
+    <value>{0} сек</value>
+  </data>
+  <data name="ClipboardClearNow" xml:space="preserve">
+    <value>Очистить сейчас</value>
+  </data>
+  <data name="ClipboardCleared" xml:space="preserve">
+    <value>Буфер обмена очищен.</value>
+  </data>
+  <data name="EditTip" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="GeneratorMinLength3" xml:space="preserve">
+    <value>Минимум должно быть 3 символа.</value>
+  </data>
+  <data name="GeneratorMaxLength32" xml:space="preserve">
+    <value>Максимум 32 символа.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="SettingsMenu" xml:space="preserve">
+    <value>Настройки…</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="SettingsGeneral" xml:space="preserve">
+    <value>Общее</value>
+  </data>
+  <data name="SettingsSecurity" xml:space="preserve">
+    <value>Безопасность</value>
+  </data>
+  <data name="SettingsSystem" xml:space="preserve">
+    <value>Система</value>
+  </data>
+  <data name="TrayHeader" xml:space="preserve">
+    <value>Трей</value>
+  </data>
+  <data name="TrayEnabled" xml:space="preserve">
+    <value>Показывать иконку в трее</value>
+  </data>
+  <data name="MinimizeToTray" xml:space="preserve">
+    <value>Сворачивать в трей при сворачивании</value>
+  </data>
+  <data name="CloseButtonAction" xml:space="preserve">
+    <value>Кнопка закрытия (X)</value>
+  </data>
+  <data name="CloseButtonActionExit" xml:space="preserve">
+    <value>Выход из приложения</value>
+  </data>
+  <data name="CloseButtonActionMinimize" xml:space="preserve">
+    <value>Сворачивать в трей</value>
+  </data>
+  <data name="StartMinimizedToTray" xml:space="preserve">
+    <value>Запускать свернутым в трей</value>
+  </data>
+  <data name="TrayNotifications" xml:space="preserve">
+    <value>Уведомления трея</value>
+  </data>
+  <data name="TrayNotificationManualLock" xml:space="preserve">
+    <value>Хранилище заблокировано.</value>
+  </data>
+  <data name="TrayNotificationAutoLock" xml:space="preserve">
+    <value>Приложение заблокировано из-за бездействия.</value>
+  </data>
+  <data name="TrayNotificationClipboardAutoCleared" xml:space="preserve">
+    <value>Буфер обмена очищен автоматически.</value>
+  </data>
+  <data name="TrayMenuOpen" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="TrayMenuLock" xml:space="preserve">
+    <value>Заблокировать</value>
+  </data>
+  <data name="TrayMenuExit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="MasterPasswordHeader" xml:space="preserve">
+    <value>Мастер-пароль</value>
+  </data>
+  <data name="MasterPasswordDescription" xml:space="preserve">
+    <value>Используется для шифрования базы. Держите его в безопасности.</value>
+  </data>
+  <data name="ChangePasswordEllipsis" xml:space="preserve">
+    <value>Сменить…</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Избранное</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Добавить в избранное</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Убрать из избранного</value>
+  </data>
+  <data name="GoToEntryFolder" xml:space="preserve">
+    <value>Перейти к папке</value>
+  </data>
+  <data name="StoragePathsHeader" xml:space="preserve">
+    <value>Хранилище и бэкапы</value>
+  </data>
+  <data name="RestoreDefaults" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="VaultPath" xml:space="preserve">
+    <value>Файл хранилища</value>
+  </data>
+  <data name="BackupsFolderPath" xml:space="preserve">
+    <value>Папка бэкапов</value>
+  </data>
+  <data name="KeepLastBackups" xml:space="preserve">
+    <value>Хранить последние бэкапы</value>
+  </data>
+  <data name="KeepBackupsOff" xml:space="preserve">
+    <value>Выключено</value>
+  </data>
+  <data name="KeepBackupsCountFmt" xml:space="preserve">
+    <value>{0} бэкапов</value>
+  </data>
+  <data name="BrowseEllipsis" xml:space="preserve">
+    <value>Выбрать…</value>
+  </data>
+  <data name="VaultPathChangeDisabledHint" xml:space="preserve">
+    <value>Будет доступно в следующем шаге (M6 Блок 2).</value>
+  </data>
+  <data name="VaultPathChooseTitle" xml:space="preserve">
+    <value>Выбор файла хранилища</value>
+  </data>
+  <data name="VaultPathChooseFilter" xml:space="preserve">
+    <value>Хранилище PassNotes (*.dat)|*.dat|Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="VaultSwitchTitle" xml:space="preserve">
+    <value>Хранилище</value>
+  </data>
+  <data name="VaultSwitchExistingConfirm" xml:space="preserve">
+    <value>Выбранный файл уже существует.
+Да — использовать существующий файл.
+Нет — заменить его текущим хранилищем.
+Отмена — ничего не менять.</value>
+  </data>
+  <data name="VaultSwitchNoCurrentVaultFmt" xml:space="preserve">
+    <value>Текущее хранилище не найдено: {0}</value>
+  </data>
+  <data name="VaultSwitchSuccessFmt" xml:space="preserve">
+    <value>Файл хранилища переключён на:
+{0}</value>
+  </data>
+  <data name="VaultSwitchPasswordMismatch" xml:space="preserve">
+    <value>Файл хранилища переключён, но текущий мастер-пароль не подходит к этому хранилищу.
+Приложение остаётся заблокированным. Нажмите Unlock и введите пароль от выбранного файла хранилища.</value>
+  </data>
+  <data name="VaultSwitchBackupCreatedFmt" xml:space="preserve">
+    <value>Создан страховочный бэкап: {0}</value>
+  </data>
+  <data name="VaultSwitchErrorFmt" xml:space="preserve">
+    <value>Не удалось переключить файл хранилища: {0}</value>
+  </data>
+  <data name="VaultSwitchPathMustBeAbsolute" xml:space="preserve">
+    <value>Путь должен быть абсолютным.</value>
+  </data>
+  <data name="DangerousActionUnsavedTitle" xml:space="preserve">
+    <value>Несохранённые изменения</value>
+  </data>
+  <data name="DangerousActionUnsavedMessageFmt" xml:space="preserve">
+    <value>Перед выполнением операции "{0}" есть несохранённые изменения.
+
+Да — сохранить и продолжить.
+Нет — продолжить без сохранения.
+Отмена — отменить операцию.</value>
+  </data>
+  <data name="DangerousActionDraftsTitle" xml:space="preserve">
+    <value>Несохранённые черновики</value>
+  </data>
+  <data name="DangerousActionDraftsMessageFmt" xml:space="preserve">
+    <value>Перед выполнением операции "{0}" есть несохранённые черновики после блокировки.
+
+Да — восстановить черновики (операция не будет выполнена).
+Нет — продолжить без восстановления.
+Отмена — отменить операцию.</value>
+  </data>
+  <data name="DangerousActionImport" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="DangerousActionRestore" xml:space="preserve">
+    <value>Восстановление</value>
+  </data>
+  <data name="DangerousActionVaultSwitch" xml:space="preserve">
+    <value>Смена хранилища</value>
+  </data>
+  <data name="Recovery" xml:space="preserve">
+    <value>Восстановление</value>
+  </data>
+  <data name="VaultOpenFailedRetryRestoreExit" xml:space="preserve">
+    <value>Не удалось открыть хранилище. Причина может быть в неверном пароле или повреждении файла.
+
+Да — попробовать ввести пароль ещё раз
+Нет — восстановить из предыдущей версии/бэкапа
+Отмена — выйти</value>
+  </data>
+  <data name="VaultOpenFailedRetryRestoreExitWithDetails" xml:space="preserve">
+    <value>Не удалось открыть хранилище.
+
+{0}
+
+Да — попробовать ещё раз
+Нет — восстановить из предыдущей версии/бэкапа
+Отмена — выйти</value>
+  </data>
+  <data name="VaultOpenFailedReasonCrypto" xml:space="preserve">
+    <value>Причина может быть в неверном пароле или повреждении файла.</value>
+  </data>
+  <data name="VaultOpenFailedReasonJson" xml:space="preserve">
+    <value>Хранилище удалось расшифровать, но данные выглядят повреждёнными.</value>
+  </data>
+  <data name="VaultOpenFailedReasonIo" xml:space="preserve">
+    <value>Не удалось прочитать файл хранилища (возможно, он занят другим процессом или нет прав доступа).</value>
+  </data>
+  <data name="VaultRestorePrevOrBackup" xml:space="preserve">
+    <value>Найдена предыдущая версия файла хранилища:
+{0}
+
+Да — восстановить из этой предыдущей версии
+Нет — выбрать файл бэкапа
+Отмена — назад</value>
+  </data>
+  <data name="SelectBackupFileTitle" xml:space="preserve">
+    <value>Выберите файл бэкапа</value>
+  </data>
+  <data name="VaultRestoredPleaseLoginAgain" xml:space="preserve">
+    <value>Восстановление выполнено. Введите пароль снова.</value>
+  </data>
+  <data name="VaultRestoreFailed" xml:space="preserve">
+    <value>Не удалось восстановить:
+{0}</value>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="TrashOnlyRestore" xml:space="preserve">
+    <value>Запись находится в корзине и недоступна для просмотра. Доступно только восстановление (через мастер‑пароль).</value>
+  </data>
+  <data name="TrashRestore" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="TrashRestoreTitle" xml:space="preserve">
+    <value>Восстановление</value>
+  </data>
+  <data name="TrashRestorePrompt" xml:space="preserve">
+    <value>Введите мастер‑пароль для восстановления выбранных записей из корзины.</value>
+  </data>
+  <data name="TrashDeleteForever" xml:space="preserve">
+    <value>Удалить навсегда</value>
+  </data>
+  <data name="TrashEmpty" xml:space="preserve">
+    <value>Очистить корзину</value>
+  </data>
+  <data name="ConfirmDeleteForever" xml:space="preserve">
+    <value>Удалить запись навсегда? Это действие нельзя отменить.</value>
+  </data>
+  <data name="ConfirmDeleteForeverMany" xml:space="preserve">
+    <value>Удалить навсегда {0} записей? Это действие нельзя отменить.</value>
+  </data>
+  <data name="ConfirmEmptyTrash" xml:space="preserve">
+    <value>Очистить корзину? Будет удалено {0} записей навсегда. Это действие нельзя отменить.</value>
+  </data>
+  <data name="EmptyTrashNothing" xml:space="preserve">
+    <value>Корзина пуста.</value>
+  </data>
+  <data name="TrashRestoredToNoFolder" xml:space="preserve">
+    <value>Запись восстановлена в «{0}».</value>
+  </data>
+  <data name="TrashRestoredToNoFolderMany" xml:space="preserve">
+    <value>{0} записей восстановлены в «{1}».</value>
+  </data>
+  <data name="TrashRestoreAsk" xml:space="preserve">
+    <value>Восстановить запись?</value>
+  </data>
+  <data name="TrashRestoreAskMany" xml:space="preserve">
+    <value>Восстановить {0} записей?</value>
+  </data>
+  <data name="ImportVaultIntegrityUnknown" xml:space="preserve">
+    <value>Внимание: в этом экспорте нет контрольной суммы целостности. Файл может быть повреждён.</value>
+  </data>
+  <data name="ImportVaultNewerVersionWarningFmt" xml:space="preserve">
+    <value>Внимание: этот экспорт создан более новой версией (v{0}). Импорт должен сработать, но совместимость не гарантирована.</value>
+  </data>
+  <data name="ImportVaultChecksumMismatch" xml:space="preserve">
+    <value>Файл экспорта повреждён (проверка целостности не пройдена).</value>
+  </data>
+  <data name="LogsHeader" xml:space="preserve">
+    <value>Логи</value>
+  </data>
+  <data name="CleanOldLogs" xml:space="preserve">
+    <value>Удалять старые логи</value>
+  </data>
+  <data name="LogRetentionDays" xml:space="preserve">
+    <value>Хранить логи (дней)</value>
+  </data>
+  <data name="OpenLogsFolder" xml:space="preserve">
+    <value>Открыть папку логов</value>
+  </data>
+  <data name="OpenLogsFolderFailed" xml:space="preserve">
+    <value>Не удалось открыть папку логов.</value>
+  </data>
+  <data name="AutoBackupEnabled" xml:space="preserve">
+    <value>Автоматические бэкапы</value>
+  </data>
+  <data name="AutoBackupInterval" xml:space="preserve">
+    <value>Периодичность бэкапа</value>
+  </data>
+  <data name="AutoBackupIntervalHoursFmt" xml:space="preserve">
+    <value>Каждые {0} ч</value>
+  </data>
+  <data name="AttachmentsHeader" xml:space="preserve">
+    <value>Вложения</value>
+  </data>
+  <data name="AttachmentsAdd" xml:space="preserve">
+    <value>Добавить...</value>
+  </data>
+  <data name="AttachmentsRemove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="AttachmentsOpen" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="AttachmentsSaveAs" xml:space="preserve">
+    <value>Сохранить как...</value>
+  </data>
+  <data name="AttachmentsEmpty" xml:space="preserve">
+    <value>Нет вложений.</value>
+  </data>
+  <data name="AttachmentsSaveEntryFirst" xml:space="preserve">
+    <value>Сначала сохраните запись, чтобы добавить вложения.</value>
+  </data>
+  <data name="AttachmentsRemoveConfirm" xml:space="preserve">
+    <value>Удалить вложение «{0}»?</value>
+  </data>
+  <data name="AttachmentsRemoveConfirmMany" xml:space="preserve">
+    <value>Удалить {0} вложений?</value>
+  </data>
+  <data name="AttachmentsRemoveSelected" xml:space="preserve">
+    <value>Удалить выбранные</value>
+  </data>
+  <data name="AttachmentsSaveSelected" xml:space="preserve">
+    <value>Сохранить выбранные...</value>
+  </data>
+  <data name="AttachmentsSelectFolderToSave" xml:space="preserve">
+    <value>Выберите папку для сохранения вложений</value>
+  </data>
+  <data name="AttachmentsSaveManyResult" xml:space="preserve">
+    <value>Сохранено {0} из {1} вложений в «{2}».</value>
+  </data>
+  <data name="AttachmentsOpenFailed" xml:space="preserve">
+    <value>Не удалось открыть вложение.</value>
+  </data>
+  <data name="AttachmentsSaveFailed" xml:space="preserve">
+    <value>Не удалось сохранить вложение.</value>
+  </data>
+  <data name="AttachmentsAddFailed" xml:space="preserve">
+    <value>Не удалось добавить вложение.</value>
+  </data>
+  <data name="AttachmentsAddSomeFailed" xml:space="preserve">
+    <value>Некоторые файлы не удалось добавить.</value>
+  </data>
+  <data name="AttachmentsDuplicateOne" xml:space="preserve">
+    <value>Уже добавлено: {0}</value>
+  </data>
+  <data name="AttachmentsDuplicateMany" xml:space="preserve">
+    <value>Часть файлов уже была добавлена ({0}).</value>
+  </data>
+  <data name="IoFileNotFound" xml:space="preserve">
+    <value>Файл не найден.</value>
+  </data>
+  <data name="IoAccessDenied" xml:space="preserve">
+    <value>Нет доступа.</value>
+  </data>
+  <data name="IoFileInUse" xml:space="preserve">
+    <value>Файл занят другим приложением.</value>
+  </data>
+  <data name="IoPathTooLong" xml:space="preserve">
+    <value>Слишком длинный путь.</value>
+  </data>
+  <data name="IoOperationFailed" xml:space="preserve">
+    <value>Не удалось выполнить операцию.</value>
+  </data>
+  <data name="AllFilesFilter" xml:space="preserve">
+    <value>Все файлы (*.*)|*.*</value>
+  </data>
+  <data name="AttachmentsSaveManyFailed" xml:space="preserve">
+    <value>Не удалось сохранить вложения.</value>
+  </data>
+  <data name="HelpMenu" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="HelpBack" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="HelpForward" xml:space="preserve">
+    <value>Вперёд</value>
+  </data>
+  <data name="HelpErrorTitle" xml:space="preserve">
+    <value>Ошибка загрузки справки</value>
+  </data>
+  <data name="HelpLoadError" xml:space="preserve">
+    <value>Не удалось загрузить справку.</value>
+  </data>
+  <data name="HelpTocHome" xml:space="preserve">
+    <value>Справка (главная)</value>
+  </data>
+  <data name="HelpTocHotkeys" xml:space="preserve">
+    <value>Горячие клавиши</value>
+  </data>
+  <data name="ShowUpdatedColumn" xml:space="preserve">
+    <value>Показывать колонку «Обновлено»</value>
+  </data>
+  <data name="SupportAuthorMenu" xml:space="preserve">
+    <value>Поддержать автора / Контакты</value>
+  </data>
+  <data name="SupportAuthorTitle" xml:space="preserve">
+    <value>Поддержать автора / Контакты</value>
+  </data>
+  <data name="SupportAuthorDescription" xml:space="preserve">
+    <value>Если PassNotes оказался полезным, проект можно поддержать через сервисы ниже.</value>
+  </data>
+  <data name="SupportAuthorLinksHeader" xml:space="preserve">
+    <value>Ссылки поддержки</value>
+  </data>
+  <data name="SupportAuthorContactsHeader" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="SupportAuthorLink1" xml:space="preserve">
+    <value>Ссылка поддержки 1</value>
+  </data>
+  <data name="SupportAuthorLink2" xml:space="preserve">
+    <value>Ссылка поддержки 2</value>
+  </data>
+  <data name="SupportAuthorLink3" xml:space="preserve">
+    <value>Ссылка поддержки 3</value>
+  </data>
+  <data name="SupportAuthorWebsite" xml:space="preserve">
+    <value>Сайт</value>
+  </data>
+  <data name="SupportAuthorEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SupportAuthorSocial" xml:space="preserve">
+    <value>Telegram / канал / GitHub</value>
+  </data>
+  <data name="SupportAuthorLinksPlaceholder" xml:space="preserve">
+    <value>Ссылки будут добавлены позже</value>
+  </data>
+  <data name="SupportAuthorContactsPlaceholder" xml:space="preserve">
+    <value>Контакты будут добавлены позже</value>
+  </data>
+  <data name="SupportAuthorBrowserHint" xml:space="preserve">
+    <value>Все ссылки откроются во внешнем браузере по умолчанию.</value>
+  </data>
+  <data name="SupportAuthorServiceBoostyName" xml:space="preserve">
+    <value>Boosty</value>
+  </data>
+  <data name="SupportAuthorServiceGitHubName" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="SupportAuthorServiceYooMoneyName" xml:space="preserve">
+    <value>ЮMoney</value>
+  </data>
+  <data name="SupportAuthorBoostyProfileAction" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="SupportAuthorBoostySupportAction" xml:space="preserve">
+    <value>Поддержать</value>
+  </data>
+  <data name="SupportAuthorGitHubProfileAction" xml:space="preserve">
+    <value>Профиль GitHub</value>
+  </data>
+  <data name="SupportAuthorYooMoneyFundraiserAction" xml:space="preserve">
+    <value>Сбор средств</value>
+  </data>
+  <data name="SupportAuthorYooMoneyTransferAction" xml:space="preserve">
+    <value>Перевод</value>
+  </data>
+  <data name="SupportAuthorContactTelegramName" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="SupportAuthorContactEmailName" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SupportAuthorTelegramOpenAction" xml:space="preserve">
+    <value>Открыть канал</value>
+  </data>
+  <data name="SupportAuthorEmailWriteAction" xml:space="preserve">
+    <value>Написать на email</value>
+  </data>
+</root>
+

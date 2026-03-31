@@ -1,0 +1,32 @@
+<UserControl x:Class="PassNotes.FolderDialogHostedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PassNotes">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="LabelText"
+                   Grid.Row="0"
+                   TextWrapping="Wrap"/>
+
+        <TextBox x:Name="NameBox"
+                 Grid.Row="2"
+                 MinWidth="320"
+                 MinHeight="{StaticResource Metric.InputMinHeight}"
+                 Padding="6,2,6,2"
+                 ContextMenu="{StaticResource BaselineTextCommandsContextMenu}"/>
+
+        <TextBlock x:Name="ErrorTextBlock"
+                   Grid.Row="4"
+                   Foreground="{DynamicResource Brush.TextPrimary}"
+                   TextWrapping="Wrap"
+                   Visibility="Collapsed"/>
+    </Grid>
+</UserControl>
+

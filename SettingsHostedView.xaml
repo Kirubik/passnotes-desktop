@@ -1,0 +1,431 @@
+<UserControl x:Class="PassNotes.SettingsHostedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PassNotes"
+             FocusManager.FocusedElement="{Binding ElementName=LanguageBox}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource BaselineDialogSurfaceBorder}">
+            <TabControl Style="{StaticResource BaselineTabControl}"
+                        ItemContainerStyle="{StaticResource BaselineTabItem}">
+                <TabItem Header="{Binding Source={x:Static local:Loc.Instance}, Path=[SettingsGeneral]}">
+                    <Grid Margin="6,10,6,6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0"
+                                   Margin="0,0,12,0"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[Language]}"/>
+                        <ComboBox x:Name="LanguageBox" Grid.Row="0" Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                  MinWidth="280"
+                                  ItemsSource="{Binding Languages}"
+                                  DisplayMemberPath="DisplayName"
+                                  SelectedItem="{Binding SelectedLanguage}"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Margin="0,0,12,0"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[Theme]}"/>
+                        <ComboBox x:Name="ThemeBox" Grid.Row="2" Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                  MinWidth="280"
+                                  ItemsSource="{Binding Themes}"
+                                  DisplayMemberPath="DisplayName"
+                                  SelectedItem="{Binding SelectedTheme}"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0"
+                                   Margin="0,0,12,0"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[TimeZone]}"/>
+                        <ComboBox x:Name="TimeZoneBox" Grid.Row="4" Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                  MinWidth="280"
+                                  ItemsSource="{Binding TimeZones}"
+                                  DisplayMemberPath="DisplayName"
+                                  SelectedItem="{Binding SelectedTimeZone}"
+                                  ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[TimeZoneTooltip]}"/>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="{Binding Source={x:Static local:Loc.Instance}, Path=[SettingsSecurity]}">
+                    <ScrollViewer Style="{StaticResource BaselineDialogBodyScrollViewer}">
+                        <Grid Margin="6,10,6,6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="16"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="16"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0"
+                                       FontSize="14" FontWeight="SemiBold"
+                                       Text="{Binding Source={x:Static local:Loc.Instance}, Path=[MasterPasswordHeader]}"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                       Opacity="0.75"
+                                       TextWrapping="Wrap"
+                                       Text="{Binding Source={x:Static local:Loc.Instance}, Path=[MasterPasswordDescription]}"/>
+
+                            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0"
+                                           Margin="0,0,12,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[AutoLockTimeout]}"/>
+                                <ComboBox Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                          MinWidth="280"
+                                          MaxDropDownHeight="240"
+                                          ItemsSource="{Binding AutoLockOptions}"
+                                          DisplayMemberPath="DisplayName"
+                                          SelectedItem="{Binding SelectedAutoLock}"/>
+                            </Grid>
+
+                            <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="8"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0"
+                                           Margin="0,0,12,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[ClipboardClearTimeout]}"/>
+
+                                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                          MinWidth="280"
+                                          MaxDropDownHeight="240"
+                                          ItemsSource="{Binding ClipboardClearOptions}"
+                                          DisplayMemberPath="DisplayName"
+                                          SelectedItem="{Binding SelectedClipboardClear}"/>
+
+                                <Button Grid.Row="2" Grid.Column="1"
+                                        Style="{StaticResource BaselineDialogButton}"
+                                        MinWidth="140"
+                                        HorizontalAlignment="Right"
+                                        x:Name="ClearClipboardNowBtn"
+                                        Click="ClearClipboardNow_Click"
+                                        Content="{Binding Source={x:Static local:Loc.Instance}, Path=[ClipboardClearNow]}"/>
+
+                                <Popup x:Name="ClipboardClearedToastPopup"
+                                       Grid.Row="2" Grid.Column="1"
+                                       PlacementTarget="{Binding ElementName=ClearClipboardNowBtn}"
+                                       Placement="Bottom"
+                                       AllowsTransparency="True"
+                                       StaysOpen="True"
+                                       Focusable="False">
+                                    <Border Style="{StaticResource BaselineToastBorder}">
+                                        <TextBlock Style="{StaticResource BaselineToastText}"
+                                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[ClipboardCleared]}"/>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+
+                            <Button Grid.Row="0" Grid.Column="1"
+                                    Style="{StaticResource BaselineDialogButton}"
+                                    MinWidth="120"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Right"
+                                    Margin="18,0,0,0"
+                                    Click="ChangePassword_Click"
+                                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[ChangePasswordEllipsis]}"/>
+
+                            <Grid Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="8"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="8"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="8"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="8"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="6"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                           FontSize="14" FontWeight="SemiBold"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[StoragePathsHeader]}"/>
+
+                                <Button Grid.Row="0" Grid.Column="2"
+                                        Style="{StaticResource BaselineDialogButton}"
+                                        MinWidth="140"
+                                        HorizontalAlignment="Right"
+                                        Margin="12,0,0,0"
+                                        IsEnabled="{Binding CanRestoreStoragePathsDefaults}"
+                                        Click="RestoreDefaultStoragePaths_Click"
+                                        Content="{Binding Source={x:Static local:Loc.Instance}, Path=[RestoreDefaults]}"/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0"
+                                           Margin="0,0,12,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[VaultPath]}"/>
+                                <Border Grid.Row="2" Grid.Column="1"
+                                        BorderBrush="{DynamicResource Brush.DialogSurfaceBorder}"
+                                        BorderThickness="1"
+                                        CornerRadius="2"
+                                        Background="{DynamicResource Brush.DialogSurfaceBackground}"
+                                        SnapsToDevicePixels="True">
+                                    <TextBox MinHeight="28"
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             IsReadOnly="True"
+                                             Padding="6,2"
+                                             VerticalContentAlignment="Center"
+                                             Text="{Binding VaultPath}"
+                                             ToolTip="{Binding VaultPath}"
+                                             ContextMenu="{StaticResource BaselineTextCommandsContextMenu}"/>
+                                </Border>
+
+                                <Button Grid.Row="2" Grid.Column="2"
+                                        Style="{StaticResource BaselineDialogButton}"
+                                        MinWidth="110"
+                                        Margin="12,0,0,0"
+                                        HorizontalAlignment="Right"
+                                        Click="ChooseVaultFile_Click"
+                                        Content="{Binding Source={x:Static local:Loc.Instance}, Path=[BrowseEllipsis]}"/>
+
+                                <TextBlock Grid.Row="4" Grid.Column="0"
+                                           Margin="0,0,12,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[BackupsFolderPath]}"/>
+                                <Border Grid.Row="4" Grid.Column="1"
+                                        BorderBrush="{DynamicResource Brush.DialogSurfaceBorder}"
+                                        BorderThickness="1"
+                                        CornerRadius="2"
+                                        Background="{DynamicResource Brush.DialogSurfaceBackground}"
+                                        SnapsToDevicePixels="True">
+                                    <TextBox MinHeight="28"
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             IsReadOnly="True"
+                                             Padding="6,2"
+                                             VerticalContentAlignment="Center"
+                                             Text="{Binding BackupsFolderPath}"
+                                             ToolTip="{Binding BackupsFolderPath}"
+                                             ContextMenu="{StaticResource BaselineTextCommandsContextMenu}"/>
+                                </Border>
+
+                                <Button Grid.Row="4" Grid.Column="2"
+                                        Style="{StaticResource BaselineDialogButton}"
+                                        MinWidth="110"
+                                        Margin="12,0,0,0"
+                                        HorizontalAlignment="Right"
+                                        Click="ChooseBackupsFolder_Click"
+                                        Content="{Binding Source={x:Static local:Loc.Instance}, Path=[BrowseEllipsis]}"/>
+
+                                <TextBlock Grid.Row="6" Grid.Column="0"
+                                           Margin="0,0,12,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[KeepLastBackups]}"/>
+                                <ComboBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource BaselineDialogComboBox}"
+                                          MinWidth="280"
+                                          MaxDropDownHeight="240"
+                                          ItemsSource="{Binding KeepBackupsOptions}"
+                                          DisplayMemberPath="DisplayName"
+                                          SelectedItem="{Binding SelectedKeepBackups}"/>
+
+                                <CheckBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3"
+                                          IsChecked="{Binding AutoBackupEnabled}"
+                                          Content="{Binding Source={x:Static local:Loc.Instance}, Path=[AutoBackupEnabled]}"/>
+
+                                <Grid Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Margin="16,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0"
+                                               Margin="0,0,12,0"
+                                               VerticalAlignment="Center"
+                                               Text="{Binding Source={x:Static local:Loc.Instance}, Path=[AutoBackupInterval]}"/>
+
+                                    <ComboBox Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                              MinWidth="280"
+                                              IsEnabled="{Binding AutoBackupEnabled}"
+                                              MaxDropDownHeight="240"
+                                              ItemsSource="{Binding AutoBackupIntervalOptions}"
+                                              DisplayMemberPath="DisplayName"
+                                              SelectedItem="{Binding SelectedAutoBackupInterval}"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+                <TabItem Header="{Binding Source={x:Static local:Loc.Instance}, Path=[SettingsSystem]}">
+                    <ScrollViewer Style="{StaticResource BaselineDialogBodyScrollViewer}">
+                        <Grid Margin="6,10,6,6">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="12"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="16"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0"
+                                       FontSize="14" FontWeight="SemiBold"
+                                       Text="{Binding Source={x:Static local:Loc.Instance}, Path=[TrayHeader]}"/>
+
+                            <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                      IsChecked="{Binding TrayEnabled}"
+                                      Content="{Binding Source={x:Static local:Loc.Instance}, Path=[TrayEnabled]}"/>
+
+                            <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                                      Margin="16,0,0,0"
+                                      IsEnabled="{Binding TrayEnabled}"
+                                      IsChecked="{Binding MinimizeToTray}"
+                                      Content="{Binding Source={x:Static local:Loc.Instance}, Path=[MinimizeToTray]}"/>
+
+                            <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="16,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0"
+                                           Margin="0,0,12,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[CloseButtonAction]}"/>
+                                <ComboBox Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                          MinWidth="280"
+                                          IsEnabled="{Binding TrayEnabled}"
+                                          ItemsSource="{Binding CloseButtonActionOptions}"
+                                          DisplayMemberPath="DisplayName"
+                                          SelectedItem="{Binding SelectedCloseButtonAction}"/>
+                            </Grid>
+
+                            <CheckBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
+                                      Margin="16,0,0,0"
+                                      IsEnabled="{Binding TrayEnabled}"
+                                      IsChecked="{Binding StartMinimizedToTray}"
+                                      Content="{Binding Source={x:Static local:Loc.Instance}, Path=[StartMinimizedToTray]}"/>
+
+                            <CheckBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
+                                      Margin="16,0,0,0"
+                                      IsEnabled="{Binding TrayEnabled}"
+                                      IsChecked="{Binding TrayNotificationsEnabled}"
+                                      Content="{Binding Source={x:Static local:Loc.Instance}, Path=[TrayNotifications]}"/>
+
+                            <TextBlock Grid.Row="12" Grid.Column="0"
+                                       FontSize="14" FontWeight="SemiBold"
+                                       Text="{Binding Source={x:Static local:Loc.Instance}, Path=[LogsHeader]}"/>
+
+                            <CheckBox Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2"
+                                      IsChecked="{Binding CleanLogsEnabled}"
+                                      Content="{Binding Source={x:Static local:Loc.Instance}, Path=[CleanOldLogs]}"/>
+
+                            <Grid Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" Margin="16,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0"
+                                           Margin="0,0,12,0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding Source={x:Static local:Loc.Instance}, Path=[LogRetentionDays]}"/>
+
+                                <ComboBox Grid.Column="1" Style="{StaticResource BaselineDialogComboBox}"
+                                          MinWidth="280"
+                                          IsEnabled="{Binding CleanLogsEnabled}"
+                                          ItemsSource="{Binding LogRetentionOptions}"
+                                          DisplayMemberPath="DisplayName"
+                                          SelectedItem="{Binding SelectedLogRetention}"/>
+                            </Grid>
+
+                            <Button Grid.Row="18" Grid.Column="1"
+                                    Style="{StaticResource BaselineDialogButton}"
+                                    MinWidth="170"
+                                    HorizontalAlignment="Right"
+                                    Margin="18,0,0,0"
+                                    x:Name="OpenLogsFolderBtn"
+                                    Click="OpenLogsFolder_Click"
+                                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[OpenLogsFolder]}"/>
+
+                            <Popup x:Name="OpenLogsFolderFailedToastPopup"
+                                   Grid.Row="18" Grid.Column="1"
+                                   PlacementTarget="{Binding ElementName=OpenLogsFolderBtn}"
+                                   Placement="Bottom"
+                                   AllowsTransparency="True"
+                                   StaysOpen="True"
+                                   Focusable="False">
+                                <Border Style="{StaticResource BaselineToastBorder}">
+                                    <TextBlock Style="{StaticResource BaselineToastText}"
+                                               Text="{Binding Source={x:Static local:Loc.Instance}, Path=[OpenLogsFolderFailed]}"/>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Border>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,0,0">
+            <Button Style="{StaticResource BaselineDialogButton}"
+                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[Cancel]}"
+                    Margin="0,0,8,0"
+                    Click="Cancel_Click"/>
+            <Button Style="{StaticResource BaselineDialogButton}"
+                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[Save]}"
+                    Click="Ok_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

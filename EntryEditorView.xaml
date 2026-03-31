@@ -1,0 +1,461 @@
+<UserControl x:Class="PassNotes.EntryEditorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PassNotes"
+             PreviewKeyDown="EntryWindow_PreviewKeyDown"
+             PreviewMouseLeftButtonDown="EntryEditorView_PreviewMouseLeftButtonDown">
+    <UserControl.Resources>
+        <local:EntryUrlActionAvailabilityConverter x:Key="EntryUrlActionAvailabilityConverter"/>
+
+        <ContextMenu x:Key="EntryCommentContextMenu"
+                     x:Shared="False"
+                     Style="{StaticResource BaselineContextMenu}">
+            <MenuItem Command="ApplicationCommands.Cut"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <MenuItem Command="ApplicationCommands.Copy"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <MenuItem Command="ApplicationCommands.Paste"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <Separator/>
+            <MenuItem Command="ApplicationCommands.SelectAll"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <Separator/>
+            <MenuItem Header="{Binding Source={x:Static local:Loc.Instance}, Path=[OpenCommentWindow]}"
+                      Click="OpenCommentWindow_Click"/>
+        </ContextMenu>
+
+        <ContextMenu x:Key="EntryUrlContextMenu"
+                     x:Shared="False"
+                     Style="{StaticResource BaselineContextMenu}"
+                     Opened="EntryUrlContextMenu_Opened">
+            <MenuItem Command="ApplicationCommands.Cut"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <MenuItem Command="ApplicationCommands.Copy"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <MenuItem Command="ApplicationCommands.Paste"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <Separator/>
+            <MenuItem Command="ApplicationCommands.SelectAll"
+                      CommandTarget="{Binding PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+            <Separator/>
+            <MenuItem Tag="CopyUrl"
+                      Header="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyUrl]}"
+                      Click="CopyUrlButton_Click"/>
+            <MenuItem Tag="OpenUrlInBrowser"
+                      Header="{Binding Source={x:Static local:Loc.Instance}, Path=[OpenUrlInBrowser]}"
+                      Click="OpenUrlButton_Click"/>
+        </ContextMenu>
+
+        <Style x:Key="EntryEditorEmbeddedTextBox"
+               TargetType="{x:Type TextBox}"
+               BasedOn="{StaticResource BaselineDialogEmbeddedTextBox}">
+            <Setter Property="Background" Value="{DynamicResource Brush.DialogSurfaceBackground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource Brush.DialogSurfaceBorder}"/>
+        </Style>
+
+        <Style x:Key="EntryEditorEmbeddedListBox"
+               TargetType="{x:Type ListBox}"
+               BasedOn="{StaticResource BaselineDialogEmbeddedListBox}">
+            <Setter Property="Background" Value="{DynamicResource Brush.DialogSurfaceBackground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource Brush.DialogSurfaceBorder}"/>
+        </Style>
+
+        <Style x:Key="EntryEditorActionButton"
+               TargetType="{x:Type Button}"
+               BasedOn="{StaticResource BaselineEntryActionButton}">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="Height" Value="{StaticResource Metric.ButtonMinHeight}"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="EntryEditorActionToggleButton"
+               TargetType="{x:Type ToggleButton}"
+               BasedOn="{StaticResource BaselineEntryActionToggleButton}">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="Height" Value="{StaticResource Metric.ButtonMinHeight}"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="EntryEditorActionIconPresenter"
+               TargetType="{x:Type ContentControl}"
+               BasedOn="{StaticResource BaselineVectorIconPresenter}">
+            <Setter Property="Width" Value="16"/>
+            <Setter Property="Height" Value="16"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Border Margin="16"
+            Style="{StaticResource BaselineDialogSurfaceBorder}">
+        <Grid ClipToBounds="True" SnapsToDevicePixels="True" MinHeight="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="3*"
+                           MinHeight="{StaticResource Metric.DialogEmbeddedTextRegionMinHeight}"/>
+
+            <!-- Spacer between Comment and Attachments (like other field gaps) -->
+            <RowDefinition Height="10"/>
+
+            <RowDefinition Height="2*"
+                           MinHeight="{StaticResource Metric.DialogEmbeddedListRegionHostMinHeight}"/>
+            <RowDefinition Height="16"/>
+
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"
+                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[FieldTitle]}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" x:Name="TitleBox"
+                 MinWidth="320"
+                 MinHeight="{StaticResource Metric.InputMinHeight}"
+                 VerticalContentAlignment="Center"
+                 ContextMenu="{StaticResource BaselineTextCommandsContextMenu}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"
+                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[FieldUsername]}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" x:Name="UsernameBox"
+                 MinHeight="{StaticResource Metric.InputMinHeight}"
+                 VerticalContentAlignment="Center"
+                 ContextMenu="{StaticResource BaselineTextCommandsContextMenu}" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"
+                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[FieldPassword]}"/>
+
+        <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="0,0,6,0" VerticalAlignment="Center">
+                <PasswordBox x:Name="PasswordBox"
+                             MinHeight="{StaticResource Metric.InputMinHeight}"
+                             ContextMenu="{StaticResource BaselineTextCommandsContextMenu}" />
+                <TextBox x:Name="PasswordTextBox"
+                         Visibility="Collapsed"
+                         MinHeight="{StaticResource Metric.InputMinHeight}"
+                         VerticalContentAlignment="Center"
+                         ContextMenu="{StaticResource BaselineTextCommandsContextMenu}" />
+            </Grid>
+
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+                <ToggleButton x:Name="ShowPwdToggle"
+                              Style="{StaticResource EntryEditorActionToggleButton}"
+                              Checked="ShowPwdToggle_Checked" Unchecked="ShowPwdToggle_Unchecked"
+                              ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[ShowPassword]}">
+                    <ContentControl Content="{StaticResource IconData.Password.Show}">
+                        <ContentControl.Style>
+                            <Style TargetType="ContentControl" BasedOn="{StaticResource EntryEditorActionIconPresenter}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton}}" Value="True">
+                                        <Setter Property="Content" Value="{StaticResource IconData.Password.Hide}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ContentControl.Style>
+                    </ContentControl>
+                </ToggleButton>
+
+                <Button x:Name="CopyLoginButton"
+                        Style="{StaticResource EntryEditorActionButton}"
+                        Margin="6,0,0,0"
+                        Click="CopyLoginButton_Click"
+                        ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyUsername]}">
+                    <ContentControl Style="{StaticResource EntryEditorActionIconPresenter}" Content="{StaticResource IconData.Copy.Login}"/>
+                </Button>
+
+                <Popup x:Name="CopyLoginToastPopup"
+                       PlacementTarget="{Binding ElementName=CopyLoginButton}"
+                       Placement="Bottom"
+                       AllowsTransparency="True"
+                       StaysOpen="True"
+                       Focusable="False">
+                    <Border Style="{StaticResource BaselineToastBorder}">
+                        <TextBlock Style="{StaticResource BaselineToastText}"
+                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[CopiedLogin]}"/>
+                    </Border>
+                </Popup>
+
+                <Popup x:Name="CopyLoginFailedToastPopup"
+                       PlacementTarget="{Binding ElementName=CopyLoginButton}"
+                       Placement="Bottom"
+                       AllowsTransparency="True"
+                       StaysOpen="True"
+                       Focusable="False">
+                    <Border Style="{StaticResource BaselineToastBorder}">
+                        <TextBlock Style="{StaticResource BaselineToastText}"
+                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyFailed]}"/>
+                    </Border>
+                </Popup>
+
+                <Button x:Name="CopyPwdButton"
+                        Style="{StaticResource EntryEditorActionButton}"
+                        Margin="6,0,0,0"
+                        Click="CopyPwdButton_Click"
+                        ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyPassword]}">
+                    <ContentControl Style="{StaticResource EntryEditorActionIconPresenter}" Content="{StaticResource IconData.Copy.Password}"/>
+                </Button>
+
+                <Popup x:Name="CopyPasswordToastPopup"
+                       PlacementTarget="{Binding ElementName=CopyPwdButton}"
+                       Placement="Bottom"
+                       AllowsTransparency="True"
+                       StaysOpen="True"
+                       Focusable="False">
+                    <Border Style="{StaticResource BaselineToastBorder}">
+                        <TextBlock Style="{StaticResource BaselineToastText}"
+                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[CopiedPassword]}"/>
+                    </Border>
+                </Popup>
+
+                <Popup x:Name="CopyPasswordFailedToastPopup"
+                       PlacementTarget="{Binding ElementName=CopyPwdButton}"
+                       Placement="Bottom"
+                       AllowsTransparency="True"
+                       StaysOpen="True"
+                       Focusable="False">
+                    <Border Style="{StaticResource BaselineToastBorder}">
+                        <TextBlock Style="{StaticResource BaselineToastText}"
+                                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyFailed]}"/>
+                    </Border>
+                </Popup>
+
+                <!-- Open password generator while the hosted entry editor is active. -->
+                <Button x:Name="OpenGeneratorButton"
+                        Style="{StaticResource EntryEditorActionButton}"
+                        Margin="6,0,0,0"
+                        Click="OpenGeneratorButton_Click"
+                        ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[OpenGenerator]}">
+                    <ContentControl Style="{StaticResource EntryEditorActionIconPresenter}" Content="{StaticResource IconData.Generator}"/>
+                </Button>
+
+                <!-- Quick lock while the hosted entry editor is open. -->
+                <Button x:Name="LockButton"
+                        Style="{StaticResource EntryEditorActionButton}"
+                        Margin="6,0,0,0"
+                        Click="LockButton_Click"
+                        ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[Lock]}">
+                    <ContentControl Style="{StaticResource EntryEditorActionIconPresenter}" Content="{StaticResource IconData.Lock}"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"
+                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[FieldUrl]}"/>
+        <Grid Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" x:Name="UrlBox"
+                     Margin="0,0,6,0"
+                     MinHeight="{StaticResource Metric.InputMinHeight}"
+                     VerticalContentAlignment="Center"
+                     ContextMenu="{StaticResource EntryUrlContextMenu}" />
+
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+                <Button x:Name="CopyUrlButton"
+                        Style="{StaticResource EntryEditorActionButton}"
+                        Click="CopyUrlButton_Click"
+                        IsEnabled="{Binding Text, ElementName=UrlBox, Converter={StaticResource EntryUrlActionAvailabilityConverter}, ConverterParameter=copy}"
+                        ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyUrl]}">
+                    <ContentControl Style="{StaticResource EntryEditorActionIconPresenter}" Content="IconData.Copy"/>
+                </Button>
+
+                <Button x:Name="OpenUrlButton"
+                        Style="{StaticResource EntryEditorActionButton}"
+                        Margin="6,0,0,0"
+                        Click="OpenUrlButton_Click"
+                        IsEnabled="{Binding Text, ElementName=UrlBox, Converter={StaticResource EntryUrlActionAvailabilityConverter}, ConverterParameter=open}"
+                        ToolTip="{Binding Source={x:Static local:Loc.Instance}, Path=[OpenUrlInBrowser]}">
+                    <ContentControl Style="{StaticResource EntryEditorActionIconPresenter}" Content="IconData.Open"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Comment label with folder location shown directly under it (icon + folder name) -->
+        <StackPanel Grid.Row="8" Grid.Column="0" VerticalAlignment="Top">
+            <TextBlock
+                Text="{Binding Source={x:Static local:Loc.Instance}, Path=[FieldComment]}"/>
+
+            <!-- Folder location shown under the Comment label: keep it on one line and trim with ellipsis when too long -->
+            <Grid x:Name="FolderLocationPanel"
+                  Margin="0,6,0,0"
+                  Visibility="Collapsed"
+                  ClipToBounds="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ContentControl Grid.Column="0"
+                                Style="{StaticResource BaselineVectorIconPresenter}"
+                                Content="{StaticResource IconData.Folder}"
+                                Margin="0,0,6,0"/>
+
+                <TextBlock Grid.Column="1"
+                           x:Name="FolderLocationText"
+                           VerticalAlignment="Center"
+                           Foreground="{DynamicResource Brush.TextSecondary}"
+                           Cursor="Hand"
+                           TextWrapping="NoWrap"
+                           TextTrimming="CharacterEllipsis"
+                           ToolTip="{Binding ElementName=FolderLocationText, Path=Text}"
+                           MouseLeftButtonUp="FolderLocationText_MouseLeftButtonUp">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextDecorations" Value="{x:Null}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="TextDecorations" Value="Underline"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+        </StackPanel>
+        <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" x:Name="CommentBox"
+                 Style="{StaticResource EntryEditorEmbeddedTextBox}"
+                 PreviewKeyDown="CommentBox_PreviewKeyDown"
+                 ContextMenu="{StaticResource EntryCommentContextMenu}" />
+
+        <!-- Attachments -->
+        <TextBlock Grid.Row="10" Grid.Column="0" VerticalAlignment="Top"
+                   Text="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsHeader]}"/>
+
+        <Grid x:Name="AttachmentsSectionPanel" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3"
+              MinHeight="{StaticResource Metric.DialogEmbeddedListRegionHostMinHeight}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"
+                               MinHeight="{StaticResource Metric.DialogEmbeddedListRegionMinHeight}"/>
+                <RowDefinition Height="6"/>
+                <RowDefinition Height="Auto"
+                               MinHeight="{StaticResource Metric.DialogEmbeddedListRegionActionsMinHeight}"/>
+            </Grid.RowDefinitions>
+
+            <ListBox x:Name="AttachmentsList" Grid.Row="0" SelectionMode="Extended"
+                     Style="{StaticResource EntryEditorEmbeddedListBox}"
+                     AllowDrop="True"
+                     PreviewMouseLeftButtonDown="AttachmentsList_PreviewMouseLeftButtonDown"
+                     PreviewDragOver="AttachmentsList_PreviewDragOver"
+                     Drop="AttachmentsList_Drop"
+                     MouseDoubleClick="AttachmentsList_MouseDoubleClick"
+                     PreviewKeyDown="AttachmentsList_PreviewKeyDown"
+                     PreviewMouseRightButtonDown="AttachmentsList_PreviewMouseRightButtonDown">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem" BasedOn="{StaticResource BaselineListBoxItem}">
+                        <Setter Property="ToolTip" Value="{Binding FileName}"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <ListBox.ContextMenu>
+                    <ContextMenu Style="{StaticResource BaselineContextMenu}"
+                                 Opened="AttachmentsContextMenu_Opened">
+                        <MenuItem x:Name="AttachmentsMenuOpen" Header="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsOpen]}"
+                                  Click="AttachmentOpen_Click"/>
+                        <MenuItem x:Name="AttachmentsMenuSaveAs" Header="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsSaveAs]}"
+                                  Click="AttachmentSaveAs_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="AttachmentsMenuCopyName" Header="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyFileName]}"
+                                  Click="AttachmentCopyFileName_Click"/>
+                        <Separator/>
+                        <MenuItem x:Name="AttachmentsMenuRemove" Header="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsRemove]}"
+                                  Click="AttachmentRemove_Click"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+
+            <Popup x:Name="CopyAttachmentNameToastPopup"
+                   PlacementTarget="{Binding ElementName=AttachmentsList}"
+                   Placement="Bottom"
+                   AllowsTransparency="True"
+                   StaysOpen="True"
+                   Focusable="False">
+                <Border Style="{StaticResource BaselineToastBorder}">
+                    <TextBlock Style="{StaticResource BaselineToastText}"
+                               Text="{Binding Source={x:Static local:Loc.Instance}, Path=[Copied]}"/>
+                </Border>
+            </Popup>
+
+            <Popup x:Name="CopyAttachmentNameFailedToastPopup"
+                   PlacementTarget="{Binding ElementName=AttachmentsList}"
+                   Placement="Bottom"
+                   AllowsTransparency="True"
+                   StaysOpen="True"
+                   Focusable="False">
+                <Border Style="{StaticResource BaselineToastBorder}">
+                    <TextBlock Style="{StaticResource BaselineToastText}"
+                               Text="{Binding Source={x:Static local:Loc.Instance}, Path=[CopyFailed]}"/>
+                </Border>
+            </Popup>
+
+            <DockPanel Grid.Row="2"
+                       Style="{StaticResource BaselineDialogEmbeddedActionsPanel}">
+                    <Button x:Name="AttachmentAddBtn"
+                            DockPanel.Dock="Left"
+                            Style="{StaticResource BaselineButton}"
+                            MinWidth="90"
+                            Content="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsAdd]}"
+                            Click="AttachmentAdd_Click"/>
+
+	                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="AttachmentRemoveBtn" Style="{StaticResource BaselineButton}" MinWidth="90" Margin="0,0,8,0"
+                            Content="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsRemove]}"
+                            Click="AttachmentRemove_Click"/>
+                    <Button x:Name="AttachmentOpenBtn" Style="{StaticResource BaselineButton}" MinWidth="90" Margin="0,0,8,0"
+                            Content="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsOpen]}"
+                            Click="AttachmentOpen_Click"/>
+                    <Button x:Name="AttachmentSaveAsBtn" Style="{StaticResource BaselineButton}" MinWidth="110"
+                            Content="{Binding Source={x:Static local:Loc.Instance}, Path=[AttachmentsSaveAs]}"
+                            Click="AttachmentSaveAs_Click"/>
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+
+        <StackPanel x:Name="EntryActionsPanel" Grid.Row="12" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Style="{StaticResource BaselineDialogButton}" MinWidth="110" Margin="0,0,8,0"
+                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[Cancel]}"
+                    Click="Cancel_Click"
+                    />
+            <Button Style="{StaticResource BaselineDialogButton}" MinWidth="110"
+                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[Save]}"
+                    Click="Ok_Click"
+                    IsDefault="True"/>
+        </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
+
+
+
+
+
+
+
+
+
+

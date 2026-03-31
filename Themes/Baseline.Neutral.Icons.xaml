@@ -1,0 +1,69 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <!--
+    Semantic icon token layer for app-owned UI.
+    Microsoft Fluent UI System Icons are the single source of truth.
+    Semantic aliases live under IconData.* and must be used instead of raw asset names.
+    Consumers must depend on semantic keys, not on raw glyph codes or raw asset names.
+  -->
+
+  <sys:String x:Key="IconData.Menu">{StaticResource FluentPath.PanelLeftHeader.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Settings">{StaticResource FluentPath.Settings.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Help">{StaticResource FluentPath.QuestionCircle.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Support">{StaticResource FluentPath.Heart.Regular16}</sys:String>
+  <sys:String x:Key="IconData.About">{StaticResource FluentPath.Info.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Theme">{StaticResource FluentPath.ColorFill.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Exit">{StaticResource FluentPath.ArrowExit.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Navigate.Back">{StaticResource FluentPath.ChevronLeft.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Navigate.Forward">{StaticResource FluentPath.ChevronRight.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Menu.Checkmark">{StaticResource FluentPath.Checkmark.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Menu.SubmenuArrow">{StaticResource FluentPath.ChevronRight.Regular12}</sys:String>
+  <sys:String x:Key="IconData.Close.Small">{StaticResource FluentPath.Dismiss.Regular12}</sys:String>
+  <sys:String x:Key="IconData.Tree.Chevron.Collapsed">{StaticResource FluentPath.ChevronRight.Regular12}</sys:String>
+  <sys:String x:Key="IconData.Tree.Chevron.Expanded">{StaticResource FluentPath.ChevronDown.Regular12}</sys:String>
+  <sys:String x:Key="IconData.Sort.Neutral">{StaticResource FluentPath.ArrowSort.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Sort.Ascending">{StaticResource FluentPath.ArrowSortUp.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Sort.Descending">{StaticResource FluentPath.ArrowSortDown.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Search">{StaticResource FluentPath.Search.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Folder.Search">{StaticResource FluentPath.FolderSearch.Regular16}</sys:String>
+  <sys:String x:Key="IconData.OpenFolder">{StaticResource FluentPath.OpenFolder.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Folder">{StaticResource FluentPath.Folder.Regular16}</sys:String>
+  <sys:String x:Key="IconData.NoFolder">{StaticResource FluentPath.FolderProhibited.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Favorites">{StaticResource FluentPath.Star.Filled16}</sys:String>
+  <sys:String x:Key="IconData.Favorite.Empty">{StaticResource FluentPath.Star.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Favorite.Filled">{StaticResource FluentPath.Star.Filled16}</sys:String>
+  <sys:String x:Key="IconData.Favorite.Add">{StaticResource FluentPath.StarAdd.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Favorite.Remove">{StaticResource FluentPath.StarDismiss.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Entry.Add">{StaticResource FluentPath.DocumentAdd.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Entry.Edit">{StaticResource FluentPath.DocumentEdit.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Entry.Delete">{StaticResource FluentPath.Delete.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Entry.Restore">{StaticResource FluentPath.DeleteArrowBack.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Entry.DeleteForever">{StaticResource FluentPath.DeleteDismiss.Regular20}</sys:String>
+  <sys:String x:Key="IconData.Trash">{StaticResource FluentPath.Delete.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Trash.Empty">{StaticResource FluentPath.DeleteLines.Regular20}</sys:String>
+  <sys:String x:Key="IconData.GoToEntryFolder">{StaticResource FluentPath.FolderArrowRight.Regular16}</sys:String>
+  <sys:String x:Key="IconData.MultiSelect">{StaticResource FluentPath.SelectAllOn.Regular16}</sys:String>
+  <sys:String x:Key="IconData.ClearSelection">{StaticResource FluentPath.SelectAllOff.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Copy">{StaticResource FluentPath.Copy.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Copy.Login">{StaticResource FluentPath.Password.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Copy.Password">{StaticResource FluentPath.PersonKey.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Password.Show">{StaticResource FluentPath.Eye.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Password.Hide">{StaticResource FluentPath.EyeOff.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Generator">{StaticResource FluentPath.KeyMultiple.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Lock">{StaticResource FluentPath.LockClosed.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Unlock">{StaticResource FluentPath.LockOpen.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Security">{StaticResource FluentPath.LockShield.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Import">{StaticResource FluentPath.DocumentArrowDown.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Export">{StaticResource FluentPath.DocumentArrowUp.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Email">F0 M3.5 3C2.67157 3 2 3.67157 2 4.5V11.5C2 12.3284 2.67157 13 3.5 13H12.5C13.3284 13 14 12.3284 14 11.5V4.5C14 3.67157 13.3284 3 12.5 3H3.5ZM3.19922 4H12.8008L8 7.59961L3.19922 4ZM3 5.01367L6.88477 7.92578L3 10.7402V5.01367ZM13 5.01367V10.7402L9.11523 7.92578L13 5.01367Z</sys:String>
+  <sys:String x:Key="IconData.Backup.Create">{StaticResource FluentPath.Archive.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Backup.Restore">{StaticResource FluentPath.ArchiveArrowBack.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Folder.Add">{StaticResource FluentPath.FolderAdd.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Folder.Edit">{StaticResource FluentPath.DocumentEdit.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Folder.Delete">{StaticResource FluentPath.Delete.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Folder.Restore">{StaticResource FluentPath.FolderArrowUp.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Open">{StaticResource FluentPath.Open.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Attachments">{StaticResource FluentPath.Attach.Regular16}</sys:String>
+  <sys:String x:Key="IconData.Save">{StaticResource FluentPath.Save.Regular16}</sys:String>
+</ResourceDictionary>

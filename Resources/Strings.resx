@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>PassNotes Desktop</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="ThemeStandard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="ThemeLight" xml:space="preserve">
+    <value>Sage</value>
+  </data>
+  <data name="ThemeArcticWhite" xml:space="preserve">
+    <value>Frost</value>
+  </data>
+  <data name="ThemeMidnightSlate" xml:space="preserve">
+    <value>Midnight</value>
+  </data>
+  <data name="ThemeAmberCircuit" xml:space="preserve">
+    <value>Amber</value>
+  </data>
+  <data name="Russian" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>Unlock vault</value>
+  </data>
+  <data name="CreateVault" xml:space="preserve">
+    <value>Create new vault</value>
+  </data>
+  <data name="MasterPassword" xml:space="preserve">
+    <value>Master password:</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password:</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="UnsavedChangesTitle" xml:space="preserve">
+    <value>Unsaved changes</value>
+  </data>
+  <data name="UnsavedChangesMessage" xml:space="preserve">
+    <value>You have unsaved changes. Save before closing?</value>
+  </data>
+  <data name="RestoreUnsavedEditsTitle" xml:space="preserve">
+    <value>Restore unsaved edits</value>
+  </data>
+  <data name="RestoreUnsavedEditsMessage" xml:space="preserve">
+    <value>Auto-lock closed an editor window with unsaved edits. Restore it now?</value>
+  </data>
+  <data name="RestoreUnsavedSettingsTitle" xml:space="preserve">
+    <value>Restore unsaved settings</value>
+  </data>
+  <data name="RestoreUnsavedSettingsMessage" xml:space="preserve">
+    <value>Lock/auto-lock closed Settings with unsaved changes. Restore it now?</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="EntrySearchPlaceholder" xml:space="preserve">
+    <value>Search entries…</value>
+  </data>
+  <data name="SearchResults" xml:space="preserve">
+    <value>Search results</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="CopyUsername" xml:space="preserve">
+    <value>Copy username</value>
+  </data>
+  <data name="CopyPassword" xml:space="preserve">
+    <value>Copy password</value>
+  </data>
+  <data name="CopyUrl" xml:space="preserve">
+    <value>Copy url</value>
+  </data>
+  <data name="TitleCol" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="UsernameCol" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="UrlCol" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="FolderCol" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="UpdatedCol" xml:space="preserve">
+    <value>Updated</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>Time zone:</value>
+  </data>
+  <data name="TimeZoneSystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="TimeZoneTooltip" xml:space="preserve">
+    <value>Time zone used to display dates and times (default: System).</value>
+  </data>
+  <data name="EntryAddTitle" xml:space="preserve">
+    <value>Add entry</value>
+  </data>
+  <data name="EntryEditTitle" xml:space="preserve">
+    <value>Edit entry</value>
+  </data>
+  <data name="FieldTitle" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="FieldUsername" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="FieldPassword" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="FieldUrl" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="OpenUrlInBrowser" xml:space="preserve">
+    <value>Open url in browser</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="BadPassword" xml:space="preserve">
+    <value>Wrong password.</value>
+  </data>
+  <data name="EmptyPassword" xml:space="preserve">
+    <value>Password cannot be empty.</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="NeedSelect" xml:space="preserve">
+    <value>Please select an entry first.</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Delete selected entry?</value>
+  </data>
+  <data name="ConfirmDeleteMany" xml:space="preserve">
+    <value>Delete selected entries ({0})?</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Copied to clipboard.</value>
+  </data>
+  <data name="CopiedLogin" xml:space="preserve">
+    <value>Login copied to clipboard.</value>
+  </data>
+  <data name="CopiedPassword" xml:space="preserve">
+    <value>Password copied to clipboard.</value>
+  </data>
+  <data name="CopyFailed" xml:space="preserve">
+    <value>Couldn't copy. Clipboard is busy.</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="FieldComment" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>Show password</value>
+  </data>
+  <data name="HidePassword" xml:space="preserve">
+    <value>Hide password</value>
+  </data>
+  <data name="RowHeight" xml:space="preserve">
+  <value>Row height:</value>
+</data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Change master password</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Old password:</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password:</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Password changed.</value>
+  </data>
+  <data name="OldPasswordWrong" xml:space="preserve">
+    <value>Old password is incorrect.</value>
+  </data>
+  <data name="PasswordSame" xml:space="preserve">
+    <value>New password must differ from old.</value>
+  </data>
+  <data name="OpenGenerator" xml:space="preserve">
+  <value>Password generator</value>
+</data>
+  <data name="GeneratorTitle" xml:space="preserve">
+  <value>Password generator</value>
+</data>
+  <data name="Length" xml:space="preserve">
+  <value>Length:</value>
+</data>
+  <data name="Copy" xml:space="preserve">
+  <value>Copy</value>
+</data>
+  <data name="CopyFileName" xml:space="preserve">
+  <value>Copy file name</value>
+</data>
+  <data name="CopyFileNames" xml:space="preserve">
+  <value>Copy file names</value>
+</data>
+  <data name="OpenCommentWindow" xml:space="preserve">
+  <value>Open comment in a separate window</value>
+</data>
+  <data name="Close" xml:space="preserve">
+  <value>Close</value>
+</data>
+  <data name="CopyUsernameShort" xml:space="preserve">
+  <value>Copy user</value>
+</data>
+  <data name="CopyPasswordShort" xml:space="preserve">
+  <value>Copy pass</value>
+</data>
+  <data name="ChangePasswordShort" xml:space="preserve">
+  <value>Change</value>
+</data>
+  <data name="OpenGeneratorShort" xml:space="preserve">
+  <value>Generator</value>
+</data>
+  <data name="Folders" xml:space="preserve">
+    <value>Folders</value>
+  </data>
+  <data name="FolderAll" xml:space="preserve">
+    <value>All entries</value>
+  </data>
+  <data name="FolderNone" xml:space="preserve">
+    <value>No folder</value>
+  </data>
+  <data name="ContextNotSelected" xml:space="preserve">
+    <value>Not selected</value>
+  </data>
+  <data name="ContextLabel" xml:space="preserve">
+    <value>Context</value>
+  </data>
+  <data name="FolderLabel" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="EntriesCountLabel" xml:space="preserve">
+    <value>Entries</value>
+  </data>
+  <data name="SelectedCountLabel" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="FolderNew" xml:space="preserve">
+    <value>New folder</value>
+  </data>
+  <data name="FolderRename" xml:space="preserve">
+    <value>Rename folder</value>
+  </data>
+  <data name="FolderDelete" xml:space="preserve">
+    <value>Delete folder</value>
+  </data>
+  <data name="FolderMultiSelectMode" xml:space="preserve">
+    <value>Select folders</value>
+  </data>
+  <data name="FoldersCheckedCount" xml:space="preserve">
+    <value>Folders selected: {0}</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Clear selection</value>
+  </data>
+  <data name="FolderNamePrompt" xml:space="preserve">
+    <value>Folder name:</value>
+  </data>
+  <data name="ConfirmDeleteFolder" xml:space="preserve">
+    <value>Delete this folder and all subfolders? Entries inside will be moved to "{0}".</value>
+  </data>
+  <data name="ConfirmDeleteFolderMany" xml:space="preserve">
+    <value>Delete selected folders ({0}) and all subfolders? Entries inside will be moved to "{1}".</value>
+  </data>
+  <data name="ConfirmDeleteFolderEntriesMoved" xml:space="preserve">
+    <value>Entries to be moved to "{1}": {0}.</value>
+  </data>
+  <data name="FolderNameEmpty" xml:space="preserve">
+    <value>Folder name cannot be empty.</value>
+  </data>
+  <data name="FolderNotFound" xml:space="preserve">
+    <value>Folder not found</value>
+  </data>
+  <data name="FoldersRoot" xml:space="preserve">
+    <value>Folders</value>
+  </data>
+  <data name="FolderSearchPlaceholder" xml:space="preserve">
+    <value>Search folders…</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Lock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="Unlock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="BackupCreateNow" xml:space="preserve">
+    <value>Create backup now</value>
+  </data>
+  <data name="BackupOpenFolder" xml:space="preserve">
+    <value>Open backups folder</value>
+  </data>
+  <data name="ImportVault" xml:space="preserve">
+    <value>Import…</value>
+  </data>
+  <data name="ImportVaultTitle" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportVaultFilter" xml:space="preserve">
+    <value>PassNotes export (*.pnexp)|*.pnexp|All files (*.*)|*.*</value>
+  </data>
+  <data name="ImportVaultConfirm" xml:space="preserve">
+    <value>Current vault will be replaced with the selected export.
+Before importing, a safety backup of the current vault will be created.
+Continue?</value>
+  </data>
+  <data name="ImportVaultInvalidFile" xml:space="preserve">
+    <value>Invalid export file.</value>
+  </data>
+  <data name="ImportVaultSuccess" xml:space="preserve">
+    <value>Import completed.
+Data has been reloaded.</value>
+  </data>
+  <data name="ImportVaultPasswordMismatch" xml:space="preserve">
+    <value>Import failed: the current master password doesn't match the selected export.</value>
+  </data>
+  <data name="ImportVaultMissingAttachmentBlobFmt" xml:space="preserve">
+    <value>Export is missing attachment blob: {0}</value>
+  </data>
+  <data name="ImportVaultSafetyBackupCreatedFmt" xml:space="preserve">
+    <value>Safety backup created: {0}</value>
+  </data>
+  <data name="ImportVaultErrorFmt" xml:space="preserve">
+    <value>Failed to import: {0}</value>
+  </data>
+  <data name="ExportVault" xml:space="preserve">
+    <value>Export…</value>
+  </data>
+  <data name="ExportVaultTitle" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportVaultFilter" xml:space="preserve">
+    <value>PassNotes export (*.pnexp)|*.pnexp|All files (*.*)|*.*</value>
+  </data>
+  <data name="ExportVaultCreatedOpenFolderFmt" xml:space="preserve">
+    <value>Export created: {0}
+Open folder?</value>
+  </data>
+  <data name="ExportVaultErrorFmt" xml:space="preserve">
+    <value>Failed to export: {0}</value>
+  </data>
+  <data name="BackupTitle" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="BackupCreatedFmt" xml:space="preserve">
+    <value>Backup created: {0}</value>
+  </data>
+  <data name="BackupSourceMissing" xml:space="preserve">
+    <value>Vault file not found.</value>
+  </data>
+  <data name="BackupCreateErrorFmt" xml:space="preserve">
+    <value>Failed to create backup: {0}</value>
+  </data>
+  <data name="BackupCreateAttachmentsCopyFailedFmt" xml:space="preserve">
+    <value>Backup was not created: failed to copy attachments ({0}).</value>
+  </data>
+  <data name="BackupCreateMissingAttachmentsFolder" xml:space="preserve">
+    <value>Backup was not created: attachments folder is missing.</value>
+  </data>
+  <data name="BackupCreateMissingAttachmentBlobFmt" xml:space="preserve">
+    <value>Backup was not created: missing attachment file: {0}</value>
+  </data>
+  <data name="BackupOpenFolderErrorFmt" xml:space="preserve">
+    <value>Failed to open backups folder: {0}</value>
+  </data>
+  <data name="BackupRestore" xml:space="preserve">
+    <value>Restore from backup…</value>
+  </data>
+  <data name="BackupRestoreTitle" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="BackupRestoreConfirm" xml:space="preserve">
+    <value>Current vault will be replaced with the selected backup.
+Before restoring, a safety backup of the current vault will be created.
+Continue?</value>
+  </data>
+  <data name="BackupRestoreFilter" xml:space="preserve">
+    <value>PassNotes backups (*.dat)|*.dat|All files (*.*)|*.*</value>
+  </data>
+  <data name="BackupRestoreSuccessRestart" xml:space="preserve">
+    <value>Restore completed.
+Data has been reloaded.</value>
+  </data>
+  <data name="BackupRestorePasswordMismatch" xml:space="preserve">
+    <value>Restore completed, but the current master password doesn't match the restored vault.
+The app remains locked. Click Unlock and enter the password for this backup.</value>
+  </data>
+  <data name="BackupRestorePasswordMismatchToast" xml:space="preserve">
+    <value>The selected backup uses a different master password.</value>
+  </data>
+  <data name="BackupRestoreMissingAttachmentsFolder" xml:space="preserve">
+    <value>The selected backup is missing the attachments folder.</value>
+  </data>
+  <data name="BackupRestoreMissingAttachmentBlobFmt" xml:space="preserve">
+    <value>The selected backup is missing an attachment file: {0}</value>
+  </data>
+  <data name="BackupRestoreSuccessToast" xml:space="preserve">
+    <value>Restore completed.</value>
+  </data>
+  <data name="BackupRestoreSuccessToastWithBeforeFmt" xml:space="preserve">
+    <value>Restore completed. Safety backup: {0}</value>
+  </data>
+  <data name="BackupRestoreBeforeCreatedFmt" xml:space="preserve">
+    <value>Safety backup created: {0}</value>
+  </data>
+  <data name="BackupRestoreErrorFmt" xml:space="preserve">
+    <value>Failed to restore from backup: {0}</value>
+  </data>
+  <data name="OrphanCleanupMovedFmt" xml:space="preserve">
+    <value>Attachments cleanup: moved to quarantine {0}</value>
+  </data>
+  <data name="OrphanCleanupPurgedFmt" xml:space="preserve">
+    <value>Attachments cleanup: deleted from quarantine {0}</value>
+  </data>
+  <data name="OrphanCleanupMovedPurgedFmt" xml:space="preserve">
+    <value>Attachments cleanup: moved to quarantine {0}, deleted {1}</value>
+  </data>
+  <data name="OrphanCleanupFailedToast" xml:space="preserve">
+    <value>Attachments cleanup failed.</value>
+  </data>
+  <data name="AutoLockTimeout" xml:space="preserve">
+    <value>Auto-lock (idle)</value>
+  </data>
+  <data name="AutoLockOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="AutoLockMinutesFmt" xml:space="preserve">
+    <value>{0} min</value>
+  </data>
+  <data name="ClipboardClearTimeout" xml:space="preserve">
+    <value>Clipboard clear</value>
+  </data>
+  <data name="ClipboardClearOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="ClipboardClearSecondsFmt" xml:space="preserve">
+    <value>{0} sec</value>
+  </data>
+  <data name="ClipboardClearNow" xml:space="preserve">
+    <value>Clear now</value>
+  </data>
+  <data name="ClipboardCleared" xml:space="preserve">
+    <value>Clipboard cleared.</value>
+  </data>
+  <data name="EditTip" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="GeneratorMinLength3" xml:space="preserve">
+    <value>Minimum length is 3 characters.</value>
+  </data>
+  <data name="GeneratorMaxLength32" xml:space="preserve">
+    <value>Maximum length is 32 characters.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsMenu" xml:space="preserve">
+    <value>Settings…</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="SettingsGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="SettingsSecurity" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="SettingsSystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="TrayHeader" xml:space="preserve">
+    <value>Tray</value>
+  </data>
+  <data name="TrayEnabled" xml:space="preserve">
+    <value>Show tray icon</value>
+  </data>
+  <data name="MinimizeToTray" xml:space="preserve">
+    <value>Minimize to tray</value>
+  </data>
+  <data name="CloseButtonAction" xml:space="preserve">
+    <value>Close button (X)</value>
+  </data>
+  <data name="CloseButtonActionExit" xml:space="preserve">
+    <value>Exit application</value>
+  </data>
+  <data name="CloseButtonActionMinimize" xml:space="preserve">
+    <value>Minimize to tray</value>
+  </data>
+  <data name="StartMinimizedToTray" xml:space="preserve">
+    <value>Start minimized to tray</value>
+  </data>
+  <data name="TrayNotifications" xml:space="preserve">
+    <value>Tray notifications</value>
+  </data>
+  <data name="TrayNotificationManualLock" xml:space="preserve">
+    <value>Vault is locked.</value>
+  </data>
+  <data name="TrayNotificationAutoLock" xml:space="preserve">
+    <value>App was locked due to inactivity.</value>
+  </data>
+  <data name="TrayNotificationClipboardAutoCleared" xml:space="preserve">
+    <value>Clipboard was cleared automatically.</value>
+  </data>
+  <data name="TrayMenuOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="TrayMenuLock" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="TrayMenuExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MasterPasswordHeader" xml:space="preserve">
+    <value>Master password</value>
+  </data>
+  <data name="MasterPasswordDescription" xml:space="preserve">
+    <value>Used to encrypt your vault. Keep it safe.</value>
+  </data>
+  <data name="ChangePasswordEllipsis" xml:space="preserve">
+    <value>Change…</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="AddToFavorites" xml:space="preserve">
+    <value>Add to favorites</value>
+  </data>
+  <data name="RemoveFromFavorites" xml:space="preserve">
+    <value>Remove from favorites</value>
+  </data>
+  <data name="GoToEntryFolder" xml:space="preserve">
+    <value>Go to folder</value>
+  </data>
+  <data name="StoragePathsHeader" xml:space="preserve">
+    <value>Storage and backups</value>
+  </data>
+  <data name="RestoreDefaults" xml:space="preserve">
+    <value>Restore defaults</value>
+  </data>
+  <data name="VaultPath" xml:space="preserve">
+    <value>Vault file</value>
+  </data>
+  <data name="BackupsFolderPath" xml:space="preserve">
+    <value>Backups folder</value>
+  </data>
+  <data name="KeepLastBackups" xml:space="preserve">
+    <value>Keep last backups</value>
+  </data>
+  <data name="KeepBackupsOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="KeepBackupsCountFmt" xml:space="preserve">
+    <value>{0} backups</value>
+  </data>
+  <data name="BrowseEllipsis" xml:space="preserve">
+    <value>Browse…</value>
+  </data>
+  <data name="VaultPathChangeDisabledHint" xml:space="preserve">
+    <value>Available in the next step (M6 Block 2).</value>
+  </data>
+  <data name="VaultPathChooseTitle" xml:space="preserve">
+    <value>Choose vault file</value>
+  </data>
+  <data name="VaultPathChooseFilter" xml:space="preserve">
+    <value>PassNotes vault (*.dat)|*.dat|All files (*.*)|*.*</value>
+  </data>
+  <data name="VaultSwitchTitle" xml:space="preserve">
+    <value>Vault</value>
+  </data>
+  <data name="VaultSwitchExistingConfirm" xml:space="preserve">
+    <value>The selected file already exists.
+Yes — use the existing file.
+No — replace it with the current vault.
+Cancel — do nothing.</value>
+  </data>
+  <data name="VaultSwitchNoCurrentVaultFmt" xml:space="preserve">
+    <value>Current vault file not found: {0}</value>
+  </data>
+  <data name="VaultSwitchSuccessFmt" xml:space="preserve">
+    <value>Vault file switched to:
+{0}</value>
+  </data>
+  <data name="VaultSwitchPasswordMismatch" xml:space="preserve">
+    <value>Vault file switched, but the current master password doesn't match this vault.
+The app remains locked. Click Unlock and enter the password for the selected vault.</value>
+  </data>
+  <data name="VaultSwitchBackupCreatedFmt" xml:space="preserve">
+    <value>Safety backup created: {0}</value>
+  </data>
+  <data name="VaultSwitchErrorFmt" xml:space="preserve">
+    <value>Failed to switch vault file: {0}</value>
+  </data>
+  <data name="VaultSwitchPathMustBeAbsolute" xml:space="preserve">
+    <value>The path must be absolute.</value>
+  </data>
+  <data name="DangerousActionUnsavedTitle" xml:space="preserve">
+    <value>Unsaved changes</value>
+  </data>
+  <data name="DangerousActionUnsavedMessageFmt" xml:space="preserve">
+    <value>There are unsaved changes before "{0}".
+
+Yes — save and continue.
+No — continue without saving.
+Cancel — cancel the operation.</value>
+  </data>
+  <data name="DangerousActionDraftsTitle" xml:space="preserve">
+    <value>Unsaved drafts</value>
+  </data>
+  <data name="DangerousActionDraftsMessageFmt" xml:space="preserve">
+    <value>There are unsaved drafts after locking before "{0}".
+
+Yes — restore drafts (the operation will not run).
+No — continue without restoring.
+Cancel — cancel the operation.</value>
+  </data>
+  <data name="DangerousActionImport" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="DangerousActionRestore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="DangerousActionVaultSwitch" xml:space="preserve">
+    <value>Switch vault</value>
+  </data>
+  <data name="Recovery" xml:space="preserve">
+    <value>Recovery</value>
+  </data>
+  <data name="VaultOpenFailedRetryRestoreExit" xml:space="preserve">
+    <value>Couldn't open the vault. The password may be wrong, or the vault file may be damaged.
+
+Yes — try entering the password again
+No — restore from previous version/backup
+Cancel — exit</value>
+  </data>
+  <data name="VaultOpenFailedRetryRestoreExitWithDetails" xml:space="preserve">
+    <value>Couldn't open the vault.
+
+{0}
+
+Yes — try again
+No — restore from previous version/backup
+Cancel — exit</value>
+  </data>
+  <data name="VaultOpenFailedReasonCrypto" xml:space="preserve">
+    <value>The password may be wrong, or the vault file may be damaged.</value>
+  </data>
+  <data name="VaultOpenFailedReasonJson" xml:space="preserve">
+    <value>The vault was decrypted, but the data looks corrupted.</value>
+  </data>
+  <data name="VaultOpenFailedReasonIo" xml:space="preserve">
+    <value>The vault file couldn't be read (it may be locked or you don't have permission).</value>
+  </data>
+  <data name="VaultRestorePrevOrBackup" xml:space="preserve">
+    <value>A previous vault version was found:
+{0}
+
+Yes — restore from this previous version
+No — choose a backup file
+Cancel — back</value>
+  </data>
+  <data name="SelectBackupFileTitle" xml:space="preserve">
+    <value>Select backup file</value>
+  </data>
+  <data name="VaultRestoredPleaseLoginAgain" xml:space="preserve">
+    <value>Restore complete. Please enter the password again.</value>
+  </data>
+  <data name="VaultRestoreFailed" xml:space="preserve">
+    <value>Restore failed:
+{0}</value>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Trash</value>
+  </data>
+  <data name="TrashOnlyRestore" xml:space="preserve">
+    <value>This entry is in Trash and cannot be opened. Only restore is available (requires the master password).</value>
+  </data>
+  <data name="TrashRestore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="TrashRestoreTitle" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="TrashRestorePrompt" xml:space="preserve">
+    <value>Enter the master password to restore the selected entries from Trash.</value>
+  </data>
+  <data name="TrashDeleteForever" xml:space="preserve">
+    <value>Delete forever</value>
+  </data>
+  <data name="TrashEmpty" xml:space="preserve">
+    <value>Empty trash</value>
+  </data>
+  <data name="ConfirmDeleteForever" xml:space="preserve">
+    <value>Delete entry forever? This cannot be undone.</value>
+  </data>
+  <data name="ConfirmDeleteForeverMany" xml:space="preserve">
+    <value>Delete {0} entries forever? This cannot be undone.</value>
+  </data>
+  <data name="ConfirmEmptyTrash" xml:space="preserve">
+    <value>Empty trash? {0} entries will be deleted forever. This cannot be undone.</value>
+  </data>
+  <data name="EmptyTrashNothing" xml:space="preserve">
+    <value>Trash is empty.</value>
+  </data>
+  <data name="TrashRestoredToNoFolder" xml:space="preserve">
+    <value>Entry restored to "{0}".</value>
+  </data>
+  <data name="TrashRestoredToNoFolderMany" xml:space="preserve">
+    <value>{0} entries restored to "{1}".</value>
+  </data>
+  <data name="TrashRestoreAsk" xml:space="preserve">
+    <value>Restore this entry?</value>
+  </data>
+  <data name="TrashRestoreAskMany" xml:space="preserve">
+    <value>Restore {0} entries?</value>
+  </data>
+  <data name="ImportVaultIntegrityUnknown" xml:space="preserve">
+    <value>Warning: this export doesn't include an integrity checksum. The file may be corrupted.</value>
+  </data>
+  <data name="ImportVaultNewerVersionWarningFmt" xml:space="preserve">
+    <value>Warning: this export was created by a newer version (v{0}). Import should work, but compatibility isn't guaranteed.</value>
+  </data>
+  <data name="ImportVaultChecksumMismatch" xml:space="preserve">
+    <value>The export file appears to be corrupted (integrity check failed).</value>
+  </data>
+  <data name="LogsHeader" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="CleanOldLogs" xml:space="preserve">
+    <value>Delete old logs</value>
+  </data>
+  <data name="LogRetentionDays" xml:space="preserve">
+    <value>Keep logs (days)</value>
+  </data>
+  <data name="OpenLogsFolder" xml:space="preserve">
+    <value>Open logs folder</value>
+  </data>
+  <data name="OpenLogsFolderFailed" xml:space="preserve">
+    <value>Failed to open logs folder.</value>
+  </data>
+  <data name="AutoBackupEnabled" xml:space="preserve">
+    <value>Automatic backups</value>
+  </data>
+  <data name="AutoBackupInterval" xml:space="preserve">
+    <value>Backup interval</value>
+  </data>
+  <data name="AutoBackupIntervalHoursFmt" xml:space="preserve">
+    <value>Every {0} h</value>
+  </data>
+  <data name="AttachmentsHeader" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="AttachmentsAdd" xml:space="preserve">
+    <value>Add...</value>
+  </data>
+  <data name="AttachmentsRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="AttachmentsOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="AttachmentsSaveAs" xml:space="preserve">
+    <value>Save as...</value>
+  </data>
+  <data name="AttachmentsEmpty" xml:space="preserve">
+    <value>No attachments.</value>
+  </data>
+  <data name="AttachmentsSaveEntryFirst" xml:space="preserve">
+    <value>Save the entry to add attachments.</value>
+  </data>
+  <data name="AttachmentsRemoveConfirm" xml:space="preserve">
+    <value>Remove attachment "{0}"?</value>
+  </data>
+  <data name="AttachmentsRemoveConfirmMany" xml:space="preserve">
+    <value>Remove {0} attachments?</value>
+  </data>
+  <data name="AttachmentsRemoveSelected" xml:space="preserve">
+    <value>Remove selected</value>
+  </data>
+  <data name="AttachmentsSaveSelected" xml:space="preserve">
+    <value>Save selected...</value>
+  </data>
+  <data name="AttachmentsSelectFolderToSave" xml:space="preserve">
+    <value>Select a folder to save attachments</value>
+  </data>
+  <data name="AttachmentsSaveManyResult" xml:space="preserve">
+    <value>Saved {0} of {1} attachments to "{2}".</value>
+  </data>
+  <data name="AttachmentsOpenFailed" xml:space="preserve">
+    <value>Could not open attachment.</value>
+  </data>
+  <data name="AttachmentsSaveFailed" xml:space="preserve">
+    <value>Could not save attachment.</value>
+  </data>
+  <data name="AttachmentsAddFailed" xml:space="preserve">
+    <value>Could not add attachment.</value>
+  </data>
+  <data name="AttachmentsAddSomeFailed" xml:space="preserve">
+    <value>Some files could not be added.</value>
+  </data>
+  <data name="AttachmentsDuplicateOne" xml:space="preserve">
+    <value>Already added: {0}</value>
+  </data>
+  <data name="AttachmentsDuplicateMany" xml:space="preserve">
+    <value>Some files were already added ({0}).</value>
+  </data>
+  <data name="IoFileNotFound" xml:space="preserve">
+    <value>File not found.</value>
+  </data>
+  <data name="IoAccessDenied" xml:space="preserve">
+    <value>Access denied.</value>
+  </data>
+  <data name="IoFileInUse" xml:space="preserve">
+    <value>File is in use by another program.</value>
+  </data>
+  <data name="IoPathTooLong" xml:space="preserve">
+    <value>Path is too long.</value>
+  </data>
+  <data name="IoOperationFailed" xml:space="preserve">
+    <value>Operation failed.</value>
+  </data>
+  <data name="AllFilesFilter" xml:space="preserve">
+    <value>All files (*.*)|*.*</value>
+  </data>
+  <data name="AttachmentsSaveManyFailed" xml:space="preserve">
+    <value>Failed to save attachments.</value>
+  </data>
+  <data name="HelpMenu" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="HelpBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="HelpForward" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="HelpErrorTitle" xml:space="preserve">
+    <value>Help content error</value>
+  </data>
+  <data name="HelpLoadError" xml:space="preserve">
+    <value>Failed to load help content.</value>
+  </data>
+  <data name="HelpTocHome" xml:space="preserve">
+    <value>Help (home)</value>
+  </data>
+  <data name="HelpTocHotkeys" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="ShowUpdatedColumn" xml:space="preserve">
+    <value>Show “Updated” column</value>
+  </data>
+  <data name="SupportAuthorMenu" xml:space="preserve">
+    <value>Support author / Contacts</value>
+  </data>
+  <data name="SupportAuthorTitle" xml:space="preserve">
+    <value>Support author / Contacts</value>
+  </data>
+  <data name="SupportAuthorDescription" xml:space="preserve">
+    <value>If PassNotes has been useful to you, you can support the project through the services below.</value>
+  </data>
+  <data name="SupportAuthorLinksHeader" xml:space="preserve">
+    <value>Support links</value>
+  </data>
+  <data name="SupportAuthorContactsHeader" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="SupportAuthorLink1" xml:space="preserve">
+    <value>Support Link 1</value>
+  </data>
+  <data name="SupportAuthorLink2" xml:space="preserve">
+    <value>Support Link 2</value>
+  </data>
+  <data name="SupportAuthorLink3" xml:space="preserve">
+    <value>Support Link 3</value>
+  </data>
+  <data name="SupportAuthorWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="SupportAuthorEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SupportAuthorSocial" xml:space="preserve">
+    <value>Telegram / Channel / GitHub</value>
+  </data>
+  <data name="SupportAuthorLinksPlaceholder" xml:space="preserve">
+    <value>Links will be added later</value>
+  </data>
+  <data name="SupportAuthorContactsPlaceholder" xml:space="preserve">
+    <value>Contacts will be added later</value>
+  </data>
+  <data name="SupportAuthorBrowserHint" xml:space="preserve">
+    <value>Links open in your default browser.</value>
+  </data>
+  <data name="SupportAuthorServiceBoostyName" xml:space="preserve">
+    <value>Boosty</value>
+  </data>
+  <data name="SupportAuthorServiceGitHubName" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="SupportAuthorServiceYooMoneyName" xml:space="preserve">
+    <value>YooMoney</value>
+  </data>
+  <data name="SupportAuthorBoostyProfileAction" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="SupportAuthorBoostySupportAction" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="SupportAuthorGitHubProfileAction" xml:space="preserve">
+    <value>GitHub profile</value>
+  </data>
+  <data name="SupportAuthorYooMoneyFundraiserAction" xml:space="preserve">
+    <value>Fundraiser</value>
+  </data>
+  <data name="SupportAuthorYooMoneyTransferAction" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="SupportAuthorContactTelegramName" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="SupportAuthorContactEmailName" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SupportAuthorTelegramOpenAction" xml:space="preserve">
+    <value>Open channel</value>
+  </data>
+  <data name="SupportAuthorEmailWriteAction" xml:space="preserve">
+    <value>Write an email</value>
+  </data>
+</root>
+

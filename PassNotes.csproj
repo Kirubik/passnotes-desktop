@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyTitle>PassNotes Desktop</AssemblyTitle>
+    <Product>PassNotes Desktop</Product>
+    <Description>Local password and notes manager for Windows</Description>
+    <ApplicationIcon>Resources\AppIcon\PassNotesApp.ico</ApplicationIcon>
+
+    <!-- Release Prep (R1.2): unified app version (manual bump) -->
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <InformationalVersion>0.1.0</InformationalVersion>
+  </PropertyGroup>
+
+  <!--
+    Enabling <UseWindowsForms>true</UseWindowsForms> brings WinForms assemblies.
+    The SDK may also inject implicit global usings for System.Windows.Forms/System.Drawing,
+    which leads to ambiguous type references across WPF code (Application, TreeView, Point, etc.).
+    We keep WinForms enabled for NotifyIcon, but remove those global usings.
+  -->
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="docs\help\**\*.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>help\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </Content>
+
+    <Content Include="docs\help\_assets\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>help\_assets\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </Content>
+
+    <Content Include="Resources\AppIcon\PassNotesApp.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PassNotesApp.ico</TargetPath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\SupportAuthor\*.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.39.1" />
+  </ItemGroup>
+
+</Project>

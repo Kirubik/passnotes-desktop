@@ -1,0 +1,14 @@
+<UserControl x:Class="PassNotes.CommentHostedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PassNotes">
+    <Grid MinHeight="0">
+        <Border Style="{StaticResource BaselineDialogSurfaceBorder}"
+                MinHeight="0">
+            <TextBox x:Name="CommentTextBox"
+                     Style="{StaticResource BaselineDialogBodyTextBox}"
+                     PreviewKeyDown="CommentTextBox_PreviewKeyDown"
+                     ContextMenu="{StaticResource BaselineTextCommandsContextMenu}"/>
+        </Border>
+    </Grid>
+</UserControl>

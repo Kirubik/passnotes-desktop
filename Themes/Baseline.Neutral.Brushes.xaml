@@ -1,0 +1,134 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!--
+    Canonical semantic brush roles for the runtime theme system.
+    Shared controls continue to consume the existing Brush.* contract; new semantic keys
+    are added here so future themes can map the light-theme TZ without local color drift.
+  -->
+
+  <!-- Surface roles -->
+  <SolidColorBrush x:Key="Brush.AppBackground" Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.WindowBackground" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.ControlBackground" Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.SurfaceBackground" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.SurfaceAltBackground" Color="#F7F7F7"/>
+  <SolidColorBrush x:Key="Brush.SurfaceSubtleBackground" Color="#F3F3F3"/>
+  <SolidColorBrush x:Key="Brush.DialogWindowBackground" Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.DialogSurfaceBackground" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.DialogSurfaceBorder" Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.OverlayBackground" Color="#CCFFFFFF"/>
+  <SolidColorBrush x:Key="Brush.ScrollBarTrackBackground" Color="#F3F3F3"/>
+  <SolidColorBrush x:Key="Brush.ScrollBarThumb" Color="#888888"/>
+  <SolidColorBrush x:Key="Brush.ScrollBarThumbHover" Color="#6B6B6B"/>
+  <SolidColorBrush x:Key="Brush.ScrollBarThumbPressed" Color="#585858"/>
+  <SolidColorBrush x:Key="Brush.SliderTrackBackground" Color="#D8D8D8"/>
+  <SolidColorBrush x:Key="Brush.SliderTrackFill" Color="#6A6A6A"/>
+  <SolidColorBrush x:Key="Brush.SliderThumb" Color="#F7F7F7"/>
+  <SolidColorBrush x:Key="Brush.SliderThumbBorder" Color="#A8A8A8"/>
+  <SolidColorBrush x:Key="Brush.SliderThumbHoverBorder" Color="#8F8F8F"/>
+  <SolidColorBrush x:Key="Brush.SliderThumbPressedBorder" Color="#787878"/>
+  <SolidColorBrush x:Key="Brush.ToastBackground" Color="#F7F7F7"/>
+  <SolidColorBrush x:Key="Brush.ToastBorder" Color="#B8B8B8"/>
+  <SolidColorBrush x:Key="Brush.ToastForeground" Color="#1F1F1F"/>
+
+  <!-- Text and icon roles -->
+  <SolidColorBrush x:Key="Brush.TextPrimary" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.TextSecondary" Color="#666666"/>
+  <SolidColorBrush x:Key="Brush.TextMuted" Color="#888888"/>
+  <SolidColorBrush x:Key="Brush.TextDisabled" Color="{DynamicResource {x:Static SystemColors.GrayTextColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.TextOnAccent" Color="#FFFFFF"/>
+  <SolidColorBrush x:Key="Brush.Caret" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.TitleBarText" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.Icon" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.IconMuted" Color="#666666"/>
+
+  <!-- Structural borders and separators -->
+  <SolidColorBrush x:Key="Brush.Border" Color="#E6E6E6"/>
+  <SolidColorBrush x:Key="Brush.BorderStrong" Color="#BFBFBF"/>
+  <SolidColorBrush x:Key="Brush.TitleBarBackground" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.TitleBarBorder" Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.GridLine" Color="#D0D0D0"/>
+  <SolidColorBrush x:Key="Brush.GridHeaderBackground" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.Divider" Color="#E6E6E6"/>
+  <SolidColorBrush x:Key="Brush.Separator" Color="#E6E6E6"/>
+
+  <!-- Accent, focus and shared state family -->
+  <SolidColorBrush x:Key="Brush.Accent" Color="#3F6F9E"/>
+  <SolidColorBrush x:Key="Brush.AccentHover" Color="#31597E"/>
+  <SolidColorBrush x:Key="Brush.AccentPressed" Color="#294A69"/>
+  <SolidColorBrush x:Key="Brush.AccentSoft" Color="#E6ECF3"/>
+  <SolidColorBrush x:Key="Brush.ControlHover" Color="#F2F2F2"/>
+  <SolidColorBrush x:Key="Brush.ControlPressed" Color="#E6E6E6"/>
+  <SolidColorBrush x:Key="Brush.ControlFocus" Color="#E8EDF3"/>
+  <SolidColorBrush x:Key="Brush.HoverBorder" Color="#C8C8C8"/>
+  <SolidColorBrush x:Key="Brush.PressedBorder" Color="#B0B0B0"/>
+  <SolidColorBrush x:Key="Brush.FocusBorder" Color="#555555" Opacity="0.80"/>
+  <SolidColorBrush x:Key="Brush.HoverBackground" Color="#F2F2F2"/>
+  <SolidColorBrush x:Key="Brush.PressedBackground" Color="#E6E6E6"/>
+  <SolidColorBrush x:Key="Brush.ButtonFocusBorder" Color="#424242"/>
+  <SolidColorBrush x:Key="Brush.ButtonDefaultBorder" Color="#666666"/>
+  <SolidColorBrush x:Key="Brush.ButtonDefaultBackground" Color="#F4F4F4"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonBackground" Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonBorder" Color="#BFBFBF"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonHoverBackground" Color="#F2F2F2"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonHoverBorder" Color="#C8C8C8"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonPressedBackground" Color="#E6E6E6"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonPressedBorder" Color="#B0B0B0"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonDefaultBackground" Color="#F4F4F4"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonDefaultBorder" Color="#666666"/>
+  <SolidColorBrush x:Key="Brush.DialogButtonFocusBorder" Color="#424242"/>
+  <SolidColorBrush x:Key="Brush.InputBackgroundDisabled" Color="#F3F3F3"/>
+  <SolidColorBrush x:Key="Brush.ToggleCheckedBackground" Color="#EAEAEA"/>
+  <SolidColorBrush x:Key="Brush.ToggleCheckedBorder" Color="#666666"/>
+
+  <!-- Selection and list/tree/grid states -->
+  <SolidColorBrush x:Key="Brush.SelectionActive" Color="#D8D8D8"/>
+  <SolidColorBrush x:Key="Brush.SelectionInactive" Color="#E8E8E8"/>
+  <SolidColorBrush x:Key="Brush.TreeListItemHoverBackground" Color="#ECECEC"/>
+  <SolidColorBrush x:Key="Brush.TreeListItemHoverBorder" Color="#D4D4D4"/>
+  <SolidColorBrush x:Key="Brush.TreeListSelectionBackground" Color="#D8D8D8"/>
+  <SolidColorBrush x:Key="Brush.TreeListSelectionBorder" Color="#7A7A7A"/>
+  <SolidColorBrush x:Key="Brush.TreeListInactiveSelectionBackground" Color="#E8E8E8"/>
+  <SolidColorBrush x:Key="Brush.TreeListInactiveSelectionBorder" Color="#B2B2B2"/>
+  <SolidColorBrush x:Key="Brush.GridRowHoverBackground" Color="#ECECEC"/>
+  <SolidColorBrush x:Key="Brush.GridRowSelectionBackground" Color="#D8D8D8"/>
+  <SolidColorBrush x:Key="Brush.GridRowInactiveSelectionBackground" Color="#E8E8E8"/>
+  <SolidColorBrush x:Key="Brush.PopupItemHoverBackground" Color="#ECECEC"/>
+  <SolidColorBrush x:Key="Brush.PopupItemHoverBorder" Color="#D4D4D4"/>
+  <SolidColorBrush x:Key="Brush.PopupItemCurrentBackground" Color="#D8D8D8"/>
+  <SolidColorBrush x:Key="Brush.PopupItemCurrentBorder" Color="#7A7A7A"/>
+  <SolidColorBrush x:Key="Brush.PopupItemPressedBackground" Color="#D8D8D8"/>
+  <SolidColorBrush x:Key="Brush.PopupItemPressedBorder" Color="#7A7A7A"/>
+  <SolidColorBrush x:Key="Brush.ListItemHoverBackground" Color="#555555" Opacity="0.18"/>
+  <SolidColorBrush x:Key="Brush.ListItemHoverBorder" Color="#555555" Opacity="0.40"/>
+  <SolidColorBrush x:Key="Brush.SelectionBackground" Color="#6A6A6A"/>
+  <SolidColorBrush x:Key="Brush.SelectionBorder" Color="#6A6A6A"/>
+  <SolidColorBrush x:Key="Brush.InactiveSelectionBackground" Color="#6A6A6A"/>
+  <SolidColorBrush x:Key="Brush.InactiveSelectionBorder" Color="#6A6A6A"/>
+  <SolidColorBrush x:Key="Brush.DropTargetBackground" Color="#777777" Opacity="0.22"/>
+  <SolidColorBrush x:Key="Brush.DropTargetBorder" Color="#777777" Opacity="0.85"/>
+  <SolidColorBrush x:Key="Brush.ActiveContextMarker" Color="#444444"/>
+  <SolidColorBrush x:Key="Brush.TreeItemBackground" Color="Transparent"/>
+  <SolidColorBrush x:Key="Brush.TreeItemBorder" Color="Transparent"/>
+
+  <!-- Semantic roles -->
+  <SolidColorBrush x:Key="Brush.Success" Color="#2E8B57"/>
+  <SolidColorBrush x:Key="Brush.SuccessSoft" Color="#E7F6ED"/>
+  <SolidColorBrush x:Key="Brush.Warning" Color="#B7791F"/>
+  <SolidColorBrush x:Key="Brush.WarningSoft" Color="#FFF4DF"/>
+  <SolidColorBrush x:Key="Brush.Error" Color="#C94F4F"/>
+  <SolidColorBrush x:Key="Brush.ErrorSoft" Color="#FDECEC"/>
+  <SolidColorBrush x:Key="Brush.Info" Color="#2563C9"/>
+  <SolidColorBrush x:Key="Brush.InfoSoft" Color="#EAF2FF"/>
+
+  <!-- Disabled family -->
+  <SolidColorBrush x:Key="Brush.DisabledBackground" Color="#F3F3F3"/>
+  <SolidColorBrush x:Key="Brush.DisabledBorder" Color="#D8D8D8"/>
+  <SolidColorBrush x:Key="Brush.DisabledText" Color="{DynamicResource {x:Static SystemColors.GrayTextColorKey}}"/>
+
+  <!-- Baseline tab family -->
+  <SolidColorBrush x:Key="Brush.TabBackground" Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.TabHoverBackground" Color="#F2F2F2"/>
+  <SolidColorBrush x:Key="Brush.TabSelectedBackground" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+  <SolidColorBrush x:Key="Brush.TabSelectedBorder" Color="#BFBFBF"/>
+</ResourceDictionary>

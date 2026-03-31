@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <!-- Shared structural primitives for the naked baseline layer. -->
+  <sys:Double x:Key="Metric.ButtonMinHeight">30</sys:Double>
+  <sys:Double x:Key="Metric.DialogButtonMinWidth">90</sys:Double>
+  <sys:Double x:Key="Metric.DialogEmbeddedTextRegionMinHeight">84</sys:Double>
+  <sys:Double x:Key="Metric.DialogEmbeddedListRegionMinHeight">64</sys:Double>
+  <sys:Double x:Key="Metric.DialogEmbeddedListRegionActionsMinHeight">30</sys:Double>
+  <sys:Double x:Key="Metric.DialogEmbeddedListRegionHostMinHeight">100</sys:Double>
+  <sys:Double x:Key="Metric.InputMinHeight">28</sys:Double>
+  <sys:Double x:Key="Metric.IconButtonSize">28</sys:Double>
+  <sys:Double x:Key="Metric.PopupMenuMinWidth">220</sys:Double>
+  <sys:Double x:Key="Metric.SearchClearButtonSize">18</sys:Double>
+  <sys:Double x:Key="Metric.SliderTrackThickness">4</sys:Double>
+  <sys:Double x:Key="Metric.SliderThumbWidth">12</sys:Double>
+  <sys:Double x:Key="Metric.SliderThumbHeight">16</sys:Double>
+  <sys:Double x:Key="Metric.ScrollBarThickness">10</sys:Double>
+  <sys:Double x:Key="Metric.ScrollBarThumbMinLength">12</sys:Double>
+  <sys:Double x:Key="Metric.ScrollBarThumbCompactThreshold">18</sys:Double>
+
+  <Thickness x:Key="Thickness.ControlBorder">1</Thickness>
+  <Thickness x:Key="Thickness.ListItemBorder">1</Thickness>
+  <Thickness x:Key="Thickness.DataGridCellBorder">1,0,0,1</Thickness>
+  <Thickness x:Key="Thickness.ButtonPadding">12,4</Thickness>
+  <Thickness x:Key="Thickness.ControlPadding">6,2</Thickness>
+  <Thickness x:Key="Thickness.ListItemPadding">6,2</Thickness>
+  <Thickness x:Key="Thickness.DataGridCellPadding">6,0,6,0</Thickness>
+  <Thickness x:Key="Thickness.ScrollBarVerticalRailMargin">0,2,0,2</Thickness>
+  <Thickness x:Key="Thickness.ScrollBarHorizontalRailMargin">2,0,2,0</Thickness>
+  <Thickness x:Key="Thickness.ScrollBarVerticalThumbMargin">2,1,2,1</Thickness>
+  <Thickness x:Key="Thickness.ScrollBarHorizontalThumbMargin">1,2,1,2</Thickness>
+  <Thickness x:Key="Thickness.ScrollBarVerticalThumbCompactMargin">2,0,2,0</Thickness>
+  <Thickness x:Key="Thickness.ScrollBarHorizontalThumbCompactMargin">0,2,0,2</Thickness>
+  <Thickness x:Key="Thickness.TabItemPadding">10,6</Thickness>
+
+  <CornerRadius x:Key="CornerRadius.Small">2</CornerRadius>
+  <CornerRadius x:Key="CornerRadius.ScrollBarTrack">5</CornerRadius>
+  <CornerRadius x:Key="CornerRadius.ScrollBarThumb">3</CornerRadius>
+  <CornerRadius x:Key="CornerRadius.ScrollBarThumbCompact">2</CornerRadius>
+  <CornerRadius x:Key="CornerRadius.Surface">4</CornerRadius>
+  <CornerRadius x:Key="CornerRadius.Toast">4</CornerRadius>
+  <CornerRadius x:Key="CornerRadius.Chip">14</CornerRadius>
+</ResourceDictionary>

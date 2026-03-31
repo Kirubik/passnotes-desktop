@@ -1,0 +1,56 @@
+<UserControl x:Class="PassNotes.LoginEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PassNotes">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="ModeText"
+                   Grid.Row="0"
+                   Style="{StaticResource BaselineDialogTitleText}"/>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="{Binding Source={x:Static local:Loc.Instance}, Path=[MasterPassword]}"/>
+            <PasswordBox x:Name="Pwd1"
+                         Margin="0,6,0,0"
+                         PasswordChanged="PasswordChanged_ClearError"
+                         ContextMenu="{StaticResource BaselineTextCommandsContextMenu}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4"
+                    x:Name="ConfirmPanel"
+                    Visibility="Collapsed">
+            <TextBlock Text="{Binding Source={x:Static local:Loc.Instance}, Path=[ConfirmPassword]}"/>
+            <PasswordBox x:Name="Pwd2"
+                         Margin="0,6,0,0"
+                         PasswordChanged="PasswordChanged_ClearError"
+                         ContextMenu="{StaticResource BaselineTextCommandsContextMenu}"/>
+        </StackPanel>
+
+        <TextBlock x:Name="ErrorTextBlock"
+                   Grid.Row="6"
+                   Foreground="{DynamicResource Brush.TextPrimary}"
+                   TextWrapping="Wrap"
+                   Visibility="Collapsed"/>
+
+        <StackPanel Grid.Row="7"
+                    Style="{StaticResource BaselineDialogActionsPanel}">
+            <Button Style="{StaticResource BaselineDialogButton}"
+                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[Cancel]}"
+                    Margin="0,0,8,0"
+                    Click="Cancel_Click"/>
+            <Button Style="{StaticResource BaselineDialogButton}"
+                    Content="{Binding Source={x:Static local:Loc.Instance}, Path=[Ok]}"
+                    Click="Ok_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

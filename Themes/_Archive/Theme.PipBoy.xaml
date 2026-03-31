@@ -1,0 +1,86 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!--
+    Archived historical Pip-Boy palette skeleton.
+    Palette-only skeleton.
+
+    IMPORTANT:
+    - This dictionary is NOT enabled by default.
+    - Archived for historical reference only.
+    - It is NOT part of the active runtime theme route.
+  -->
+
+  <!-- Base surfaces -->
+  <SolidColorBrush x:Key="Brush.WindowBackground" Color="#071107"/>
+  <SolidColorBrush x:Key="Brush.ControlBackground" Color="#0B1B0B"/>
+  <SolidColorBrush x:Key="Brush.SurfaceBackground" Color="#081608"/>
+  <SolidColorBrush x:Key="Brush.SurfaceAltBackground" Color="#0D220D"/>
+
+  <!-- Text / icons -->
+  <SolidColorBrush x:Key="Brush.TextPrimary" Color="#7CFF9A"/>
+  <SolidColorBrush x:Key="Brush.TextSecondary" Color="#4DDA73"/>
+  <SolidColorBrush x:Key="Brush.TextMuted" Color="#2E9A4C"/>
+  <SolidColorBrush x:Key="Brush.TextDisabled" Color="#1F6A35"/>
+  <SolidColorBrush x:Key="Brush.Icon" Color="#7CFF9A"/>
+  <SolidColorBrush x:Key="Brush.IconMuted" Color="#4DDA73"/>
+
+  <!-- Borders / separators -->
+  <SolidColorBrush x:Key="Brush.Border" Color="#1B4027"/>
+  <SolidColorBrush x:Key="Brush.BorderStrong" Color="#2B6A3F"/>
+  <SolidColorBrush x:Key="Brush.GridLine" Color="#17361F"/>
+  <SolidColorBrush x:Key="Brush.Separator" Color="#1B4027"/>
+
+  <!-- Interactive states -->
+  <SolidColorBrush x:Key="Brush.HoverBorder" Color="#2B6A3F"/>
+  <SolidColorBrush x:Key="Brush.PressedBorder" Color="#3B8A52"/>
+  <SolidColorBrush x:Key="Brush.HoverBackground" Color="#0F2A0F"/>
+  <SolidColorBrush x:Key="Brush.PressedBackground" Color="#143614"/>
+
+  <!-- Toggle checked -->
+  <SolidColorBrush x:Key="Brush.ToggleCheckedBackground" Color="#102F10"/>
+  <SolidColorBrush x:Key="Brush.ToggleCheckedBorder" Color="#3B8A52"/>
+
+  <!-- Active context marker -->
+  <SolidColorBrush x:Key="Brush.ActiveContextMarker" Color="#7CFF9A"/>
+
+  <!-- Dedicated tree/list selection family -->
+  <SolidColorBrush x:Key="Brush.TreeListItemHoverBackground" Color="#7CFF9A" Opacity="0.08"/>
+  <SolidColorBrush x:Key="Brush.TreeListItemHoverBorder" Color="#7CFF9A" Opacity="0.30"/>
+  <SolidColorBrush x:Key="Brush.TreeListSelectionBackground" Color="#7CFF9A" Opacity="0.14"/>
+  <SolidColorBrush x:Key="Brush.TreeListSelectionBorder" Color="#7CFF9A" Opacity="0.75"/>
+  <SolidColorBrush x:Key="Brush.TreeListInactiveSelectionBackground" Color="#4DDA73" Opacity="0.10"/>
+  <SolidColorBrush x:Key="Brush.TreeListInactiveSelectionBorder" Color="#4DDA73" Opacity="0.45"/>
+
+  <!-- Dedicated grid selection family -->
+  <SolidColorBrush x:Key="Brush.GridRowHoverBackground" Color="#7CFF9A" Opacity="0.08"/>
+  <SolidColorBrush x:Key="Brush.GridRowSelectionBackground" Color="#7CFF9A" Opacity="0.14"/>
+  <SolidColorBrush x:Key="Brush.GridRowInactiveSelectionBackground" Color="#4DDA73" Opacity="0.10"/>
+
+  <!-- Dedicated popup item family -->
+  <SolidColorBrush x:Key="Brush.PopupItemHoverBackground" Color="#7CFF9A" Opacity="0.08"/>
+  <SolidColorBrush x:Key="Brush.PopupItemHoverBorder" Color="#7CFF9A" Opacity="0.30"/>
+  <SolidColorBrush x:Key="Brush.PopupItemCurrentBackground" Color="#7CFF9A" Opacity="0.14"/>
+  <SolidColorBrush x:Key="Brush.PopupItemCurrentBorder" Color="#7CFF9A" Opacity="0.75"/>
+  <SolidColorBrush x:Key="Brush.PopupItemPressedBackground" Color="#7CFF9A" Opacity="0.14"/>
+  <SolidColorBrush x:Key="Brush.PopupItemPressedBorder" Color="#7CFF9A" Opacity="0.75"/>
+
+  <!-- Shared popup/misc selection family -->
+  <SolidColorBrush x:Key="Brush.SelectionBackground" Color="#7CFF9A" Opacity="0.18"/>
+  <SolidColorBrush x:Key="Brush.SelectionBorder" Color="#7CFF9A" Opacity="0.75"/>
+  <SolidColorBrush x:Key="Brush.InactiveSelectionBackground" Color="#4DDA73" Opacity="0.12"/>
+  <SolidColorBrush x:Key="Brush.InactiveSelectionBorder" Color="#4DDA73" Opacity="0.45"/>
+
+  <!-- Drag&Drop target highlight -->
+  <SolidColorBrush x:Key="Brush.DropTargetBackground" Color="#7CFF9A" Opacity="0.12"/>
+  <SolidColorBrush x:Key="Brush.DropTargetBorder" Color="#7CFF9A" Opacity="0.65"/>
+
+  <!-- TreeView item base visuals -->
+  <SolidColorBrush x:Key="Brush.TreeItemBackground" Color="Transparent"/>
+  <SolidColorBrush x:Key="Brush.TreeItemBorder" Color="Transparent"/>
+
+</ResourceDictionary>
+
+
+
+

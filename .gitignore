@@ -1,0 +1,41 @@
+# Build outputs
+bin/
+obj/
+artifacts/
+publish/
+TestResults/
+packages/
+BenchmarkDotNet.Artifacts/
+
+# IDE / user-specific files
+.vs/
+.vscode/
+.idea/
+*.user
+*.rsuser
+*.suo
+*.userprefs
+*.sln.docstates
+*.pubxml.user
+
+# Logs / diagnostics / temp
+*.log
+*.tmp
+*.temp
+*.cache
+*.pdb
+*.bak
+*.orig
+*.rej
+
+# OS noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local archives / analysis
+archives/
+analysis_frames/
+
+# Local installer output
+installer/Output/

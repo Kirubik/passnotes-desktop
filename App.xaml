@@ -1,0 +1,14 @@
+<Application x:Class="PassNotes.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Baseline.Neutral.Primitives.xaml"/>
+                <ResourceDictionary Source="Themes/Baseline.Neutral.IconAssets.xaml"/>
+                <ResourceDictionary Source="Themes/Baseline.Neutral.Icons.xaml"/>
+                <ResourceDictionary Source="Themes/Baseline.Neutral.Controls.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

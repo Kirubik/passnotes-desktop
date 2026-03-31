@@ -1,0 +1,802 @@
+{
+  "version": 4,
+  "generatedUtc": "2026-02-23T16:27:45Z",
+  "items": [
+    {
+      "id": "folders.delete",
+      "titleRu": "Удалить выбранную/отмеченную папку(и)",
+      "titleEn": "Delete selected/checked folder(s)",
+      "gestures": [
+        "Delete"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "FolderTree"
+      },
+      "whenActive": "Keyboard focus within FolderTree",
+      "kind": "binding",
+      "source": [
+        "MainWindow.xaml: <TreeView.InputBindings><KeyBinding Key=Delete Command=DeleteSelectedOrCheckedFoldersCommand/>",
+        "MainWindow.xaml.cs: FolderTree_PreviewKeyDown (multi-select mode allows Delete)"
+      ],
+      "notes": "In folder multi-select mode Delete is preserved (bulk delete operates on checked folders)."
+    },
+    {
+      "id": "entries.delete",
+      "titleRu": "Удалить выбранные записи",
+      "titleEn": "Delete selected entries",
+      "gestures": [
+        "Delete"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "EntriesGrid"
+      },
+      "whenActive": "Keyboard focus within Entries DataGrid",
+      "kind": "binding",
+      "source": [
+        "MainWindow.xaml: <DataGrid.InputBindings><KeyBinding Key=Delete Command=DeleteSelectedEntriesCommand/>",
+        "MainWindow.xaml.cs: DeleteSelectedEntriesCommand implementation in VM context"
+      ],
+      "notes": "Must not break multi-select."
+    },
+    {
+      "id": "entries.selectAll",
+      "titleRu": "Выбрать все записи",
+      "titleEn": "Select all entries",
+      "gestures": [
+        "Ctrl+A"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "EntriesGrid"
+      },
+      "whenActive": "Keyboard focus within Entries DataGrid",
+      "kind": "binding",
+      "source": [
+        "MainWindow.xaml: <DataGrid.InputBindings><KeyBinding Modifiers=Control Key=A Command=SelectAllEntriesCommand/>",
+        "MainWindow.xaml.cs / ViewModel: SelectAllEntriesCommand"
+      ],
+      "notes": "Text inputs keep default Ctrl+A behavior separately."
+    },
+    {
+      "id": "main.search.focusEntries",
+      "titleRu": "Фокус в поиск записей",
+      "titleEn": "Focus entries search",
+      "gestures": [
+        "Ctrl+F"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Unlocked (!IsLocked)",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: main.search.focusEntries",
+        "HotkeysInstaller.cs: applies Window.InputBindings",
+        "MainWindow.xaml.cs: HotkeysInstaller.Apply(...)"
+      ],
+      "notes": "Added in I1.2 as window-level KeyBinding; focuses SearchBox and selects text.",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "main.search.focusFolders",
+      "titleRu": "Фокус в поиск папок",
+      "titleEn": "Focus folders search",
+      "gestures": [
+        "Ctrl+Shift+F"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Unlocked (!IsLocked)",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: main.search.focusFolders",
+        "HotkeysInstaller.cs: applies Window.InputBindings",
+        "MainWindow.xaml.cs: HotkeysInstaller.Apply(...)"
+      ],
+      "notes": "Added in I1.2 as window-level KeyBinding; focuses FolderSearchBox and selects text.",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "main.entry.add",
+      "titleRu": "Создать запись",
+      "titleEn": "Create entry",
+      "gestures": [
+        "Ctrl+N"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Unlocked and CanCreateEntry (Folder/NoFolder context)",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: main.entry.add",
+        "HotkeysInstaller.cs: applies Window.InputBindings",
+        "MainWindow.xaml.cs: HotkeysInstaller.Apply(...)",
+        "MainWindow.xaml.cs: Add_Click (existing pipeline)"
+      ],
+      "notes": "Executes existing Add_Click pipeline; does not bypass context restrictions.",
+      "inputPolicy": "BlockInTextInput"
+    },
+    {
+      "id": "main.folder.add",
+      "titleRu": "Создать папку",
+      "titleEn": "Create folder",
+      "gestures": [
+        "Ctrl+Shift+N"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Unlocked and folder creation allowed (not hovering NoFolder, folders not collapsed)",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: main.folder.add",
+        "HotkeysInstaller.cs: applies Window.InputBindings",
+        "MainWindow.xaml.cs: CanCreateFolderHotkey() mirrors button rules",
+        "MainWindow.xaml.cs: AddFolder_Click (existing pipeline)"
+      ],
+      "notes": "Mirrors AddFolder button enablement rules to avoid bypassing UX constraints.",
+      "inputPolicy": "BlockInTextInput"
+    },
+    {
+      "id": "main.lock.toggle",
+      "titleRu": "Заблокировать/разблокировать",
+      "titleEn": "Lock/Unlock toggle",
+      "gestures": [
+        "Ctrl+L"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Always",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: main.lock.toggle",
+        "HotkeysInstaller.cs: applies Window.InputBindings",
+        "MainWindow.xaml.cs: Lock()/Unlock() pipelines"
+      ],
+      "notes": "If locked → runs Unlock flow (LoginWindow), else locks and clears sensitive UI.",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "entry.save.ctrlS",
+      "titleRu": "Сохранить запись",
+      "titleEn": "Save entry",
+      "gestures": [
+        "Ctrl+S"
+      ],
+      "scope": {
+        "window": "EntryWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "While entry editor is open; best-effort skip when _isSaving",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: entry.save.ctrlS",
+        "EntryWindow.xaml.cs: HotkeysInstaller.Apply(...) + HotkeySaveCommand",
+        "EntryWindow.xaml.cs: TrySaveAndClose()"
+      ],
+      "notes": "Equivalent to Save/OK; Enter remains default, Ctrl+Enter in CommentBox remains for multiline save.",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "settings.save.ctrlS",
+      "titleRu": "Сохранить настройки",
+      "titleEn": "Save settings",
+      "gestures": [
+        "Ctrl+S"
+      ],
+      "scope": {
+        "window": "SettingsWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "While settings window is open",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: settings.save.ctrlS",
+        "SettingsWindow.xaml.cs: HotkeysInstaller.Apply(...) + HotkeySaveCommand",
+        "SettingsWindow.xaml.cs: Ok_Click"
+      ],
+      "notes": "Equivalent to Save button (Ok_Click).",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "main.entries.arrowStayInList",
+      "titleRu": "Up/Down: навигация и фокус остаются в списке записей",
+      "titleEn": "Up/Down: keep navigation and focus inside entries list",
+      "gestures": [
+        "Up",
+        "Down"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "No modifiers; original source is not TextBox/PasswordBox/ComboBox; not inside Menu/ContextMenu; FolderTree not focused",
+      "kind": "handler",
+      "source": [
+        "MainWindow.xaml.cs: MainWindow_PreviewKeyDown (Up/Down branch)",
+        "MainWindow.xaml.cs: IsTextInputSource"
+      ],
+      "notes": "If multi-select active (>1 selected) handler only restores focus/scroll to avoid collapsing selection."
+    },
+    {
+      "id": "main.panes.focusEntries",
+      "titleRu": "Right: фокус с дерева папок на список записей",
+      "titleEn": "Right: focus from folder tree to entries grid",
+      "gestures": [
+        "Right"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "No modifiers; not typing in input; not in menus; FolderTree focused; NOT in folder multi-select mode",
+      "kind": "handler",
+      "source": [
+        "MainWindow.xaml.cs: MainWindow_PreviewKeyDown (Right branch)",
+        "MainWindow.xaml.cs: IsFolderMultiSelectMode"
+      ],
+      "notes": "Ensures grid has selection (best-effort selects first row if none)."
+    },
+    {
+      "id": "main.panes.focusFolders",
+      "titleRu": "Left: фокус со списка записей на дерево папок",
+      "titleEn": "Left: focus from entries grid to folder tree",
+      "gestures": [
+        "Left"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "No modifiers; not typing in input; not in menus; EntriesGrid focused",
+      "kind": "handler",
+      "source": [
+        "MainWindow.xaml.cs: MainWindow_PreviewKeyDown (Left branch)"
+      ],
+      "notes": "Best-effort FolderTree.Focus()."
+    },
+    {
+      "id": "folders.activateOrToggleExpand",
+      "titleRu": "Enter в дереве: expand/collapse и активация папки как контекста",
+      "titleEn": "Enter in tree: expand/collapse and activate folder context",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "FolderTree"
+      },
+      "whenActive": "No modifiers; not typing in input; not in menus; FolderTree focused; NOT in folder multi-select mode",
+      "kind": "handler",
+      "source": [
+        "MainWindow.xaml.cs: MainWindow_PreviewKeyDown (Enter on FolderTree)",
+        "MainWindow.xaml.cs: FindVisualParent<TreeViewItem> + toggle IsExpanded"
+      ],
+      "notes": "Always updates right-pane context (RefreshGrid + UpdateActiveContextBindings, etc.)."
+    },
+    {
+      "id": "entries.openOrRestore",
+      "titleRu": "Enter в списке: открыть запись (или восстановить из корзины)",
+      "titleEn": "Enter in list: open entry (or restore from Trash)",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "EntriesGrid"
+      },
+      "whenActive": "No modifiers; not typing in input; not in menus; EntriesGrid focused; exactly one entry selected",
+      "kind": "handler",
+      "source": [
+        "MainWindow.xaml.cs: MainWindow_PreviewKeyDown (Enter on EntriesGrid)",
+        "MainWindow.xaml.cs: Edit_Click / TryRestoreFromTrashByDoubleClick"
+      ],
+      "notes": "In Trash context Enter triggers restore instead of editing."
+    },
+    {
+      "id": "folders.search.clear",
+      "titleRu": "Очистить поиск по папкам",
+      "titleEn": "Clear folder search",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "FolderSearchBox"
+      },
+      "whenActive": "Keyboard focus in FolderSearchBox",
+      "kind": "handler",
+      "source": [
+        "MainWindow.xaml: FolderSearchBox PreviewKeyDown=FolderSearchBox_PreviewKeyDown",
+        "MainWindow.xaml.cs: FolderSearchBox_PreviewKeyDown"
+      ],
+      "notes": "Clears text and marks event handled."
+    },
+    {
+      "id": "folders.multiselect.suppressNavigationKeys",
+      "titleRu": "Режим multi-select папок: блокировать навигационные клавиши (кроме Delete)",
+      "titleEn": "Folder multi-select mode: suppress navigation keys (except Delete)",
+      "gestures": [
+        "Up",
+        "Down",
+        "Left",
+        "Right",
+        "Home",
+        "End",
+        "PageUp",
+        "PageDown",
+        "Enter",
+        "Space"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "FolderTree"
+      },
+      "whenActive": "IsFolderMultiSelectMode=true",
+      "kind": "handler",
+      "source": [
+        "MainWindow.xaml: FolderTree PreviewKeyDown=FolderTree_PreviewKeyDown",
+        "MainWindow.xaml.cs: FolderTree_PreviewKeyDown"
+      ],
+      "notes": "Prevents TreeView selection changes; keeps checkbox-driven bulk selection UX."
+    },
+    {
+      "id": "entry.save.defaultEnter",
+      "titleRu": "Сохранить запись",
+      "titleEn": "Save entry",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "EntryWindow",
+        "control": "(default button)"
+      },
+      "whenActive": "WPF default button activation; Enter not consumed by input control",
+      "kind": "default",
+      "source": [
+        "EntryWindow.xaml: Save button IsDefault=True",
+        "EntryWindow.xaml.cs: Ok_Click"
+      ],
+      "notes": "CommentBox has AcceptsReturn=true, so plain Enter inserts newline and does not trigger Save."
+    },
+    {
+      "id": "entry.cancel.esc",
+      "titleRu": "Отмена/закрыть редактор",
+      "titleEn": "Cancel/close editor",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "EntryWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "EntryWindow active",
+      "kind": "handler",
+      "source": [
+        "EntryWindow.xaml: PreviewKeyDown=EntryWindow_PreviewKeyDown",
+        "EntryWindow.xaml.cs: EntryWindow_PreviewKeyDown"
+      ],
+      "notes": "Implemented manually instead of IsCancel=True to avoid double unsaved-changes prompt."
+    },
+    {
+      "id": "entry.comment.ctrlEnterSave",
+      "titleRu": "Сохранить из многострочного комментария",
+      "titleEn": "Save from multiline comment",
+      "gestures": [
+        "Ctrl+Enter"
+      ],
+      "scope": {
+        "window": "EntryWindow",
+        "control": "CommentBox"
+      },
+      "whenActive": "Focus in CommentBox (AcceptsReturn=true)",
+      "kind": "handler",
+      "source": [
+        "EntryWindow.xaml: CommentBox PreviewKeyDown=CommentBox_PreviewKeyDown",
+        "EntryWindow.xaml.cs: CommentBox_PreviewKeyDown"
+      ],
+      "notes": "Keeps classic multiline behavior for Enter; Ctrl+Enter triggers Ok_Click."
+    },
+    {
+      "id": "entry.attachments.selectAll",
+      "titleRu": "Выбрать все вложения",
+      "titleEn": "Select all attachments",
+      "gestures": [
+        "Ctrl+A"
+      ],
+      "scope": {
+        "window": "EntryWindow",
+        "control": "AttachmentsList"
+      },
+      "whenActive": "Focus in AttachmentsList",
+      "kind": "handler",
+      "source": [
+        "EntryWindow.xaml: AttachmentsList PreviewKeyDown=AttachmentsList_PreviewKeyDown",
+        "EntryWindow.xaml.cs: AttachmentsList_PreviewKeyDown"
+      ],
+      "notes": "Manual selection via SelectedItems to keep extended selection behavior."
+    },
+    {
+      "id": "entry.attachments.delete",
+      "titleRu": "Удалить выбранные вложения",
+      "titleEn": "Remove selected attachments",
+      "gestures": [
+        "Delete"
+      ],
+      "scope": {
+        "window": "EntryWindow",
+        "control": "AttachmentsList"
+      },
+      "whenActive": "Focus in AttachmentsList and at least one attachment selected",
+      "kind": "handler",
+      "source": [
+        "EntryWindow.xaml.cs: AttachmentsList_PreviewKeyDown (Delete branch)",
+        "EntryWindow.xaml.cs: AttachmentRemove_Click"
+      ],
+      "notes": "Triggers remove action; respects selection state."
+    },
+    {
+      "id": "comment.cancel.esc",
+      "titleRu": "Отмена и закрыть окно комментария",
+      "titleEn": "Cancel and close comment window",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "CommentWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "CommentWindow active",
+      "kind": "handler",
+      "source": [
+        "CommentWindow.xaml.cs: CommentWindow_PreviewKeyDown"
+      ],
+      "notes": "Does not apply draft to EntryWindow."
+    },
+    {
+      "id": "comment.apply.ctrlEnter",
+      "titleRu": "Применить комментарий (OK)",
+      "titleEn": "Apply comment (OK)",
+      "gestures": [
+        "Ctrl+Enter"
+      ],
+      "scope": {
+        "window": "CommentWindow",
+        "control": "CommentTextBox"
+      },
+      "whenActive": "Focus in multiline CommentTextBox",
+      "kind": "handler",
+      "source": [
+        "CommentWindow.xaml: CommentTextBox PreviewKeyDown=CommentTextBox_PreviewKeyDown",
+        "CommentWindow.xaml.cs: CommentTextBox_PreviewKeyDown"
+      ],
+      "notes": "Keeps Enter as newline; Ctrl+Enter applies and closes."
+    },
+    {
+      "id": "settings.cancel.esc",
+      "titleRu": "Закрыть настройки без сохранения",
+      "titleEn": "Close settings without saving",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "SettingsWindow",
+        "control": "(cancel button)"
+      },
+      "whenActive": "SettingsWindow active",
+      "kind": "default",
+      "source": [
+        "SettingsWindow.xaml: Cancel button IsCancel=True"
+      ],
+      "notes": "WPF IsCancel default behavior."
+    },
+    {
+      "id": "settings.save.defaultEnter",
+      "titleRu": "Сохранить настройки",
+      "titleEn": "Save settings",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "SettingsWindow",
+        "control": "(default button)"
+      },
+      "whenActive": "WPF default button activation; Enter not consumed by focused control",
+      "kind": "default",
+      "source": [
+        "SettingsWindow.xaml: Save button IsDefault=True"
+      ],
+      "notes": "WPF IsDefault default behavior."
+    },
+    {
+      "id": "gen.generate.defaultEnter",
+      "titleRu": "Сгенерировать пароль",
+      "titleEn": "Generate password",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "PasswordGeneratorWindow",
+        "control": "GenerateButton"
+      },
+      "whenActive": "Generator window active",
+      "kind": "default",
+      "source": [
+        "PasswordGeneratorWindow.xaml: Generate button IsDefault=True"
+      ],
+      "notes": "Enter triggers Generate_Click via WPF default button."
+    },
+    {
+      "id": "gen.close.esc",
+      "titleRu": "Закрыть генератор",
+      "titleEn": "Close generator",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "PasswordGeneratorWindow",
+        "control": "CloseButton"
+      },
+      "whenActive": "Generator window active",
+      "kind": "default",
+      "source": [
+        "PasswordGeneratorWindow.xaml: Close button IsCancel=True"
+      ],
+      "notes": "WPF IsCancel default behavior."
+    },
+    {
+      "id": "gen.length.digitsOnly",
+      "titleRu": "Длина пароля: разрешены только цифры",
+      "titleEn": "Password length: digits only",
+      "gestures": [
+        "TextInput"
+      ],
+      "scope": {
+        "window": "PasswordGeneratorWindow",
+        "control": "LenBox"
+      },
+      "whenActive": "Typing into LenBox",
+      "kind": "handler",
+      "source": [
+        "PasswordGeneratorWindow.xaml: LenBox PreviewTextInput=LenBox_PreviewTextInput",
+        "PasswordGeneratorWindow.xaml.cs: LenBox_PreviewTextInput"
+      ],
+      "notes": "Not a hotkey; keyboard behavior constraint."
+    },
+    {
+      "id": "login.cancel.esc",
+      "titleRu": "Отмена",
+      "titleEn": "Cancel",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "LoginWindow",
+        "control": "CancelButton"
+      },
+      "whenActive": "Login window active",
+      "kind": "default",
+      "source": [
+        "LoginWindow.xaml: Cancel button IsCancel=True"
+      ],
+      "notes": "WPF IsCancel default behavior."
+    },
+    {
+      "id": "login.ok.defaultEnter",
+      "titleRu": "OK / Войти",
+      "titleEn": "OK / Login",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "LoginWindow",
+        "control": "OkButton"
+      },
+      "whenActive": "Login window active",
+      "kind": "default",
+      "source": [
+        "LoginWindow.xaml: Ok button IsDefault=True"
+      ],
+      "notes": "WPF IsDefault default behavior."
+    },
+    {
+      "id": "masterprompt.ok.defaultEnter",
+      "titleRu": "OK / Подтвердить",
+      "titleEn": "OK / Confirm",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "MasterPasswordPromptWindow",
+        "control": "OkButton"
+      },
+      "whenActive": "Prompt active",
+      "kind": "default",
+      "source": [
+        "MasterPasswordPromptWindow.xaml: Ok button IsDefault=True"
+      ],
+      "notes": "WPF IsDefault default behavior."
+    },
+    {
+      "id": "masterprompt.cancel.esc",
+      "titleRu": "Отмена",
+      "titleEn": "Cancel",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "MasterPasswordPromptWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Prompt active",
+      "kind": "handler",
+      "source": [
+        "MasterPasswordPromptWindow.xaml: KeyDown=Window_KeyDown",
+        "MasterPasswordPromptWindow.xaml.cs: Window_KeyDown"
+      ],
+      "notes": "Explicitly sets DialogResult=false on Esc."
+    },
+    {
+      "id": "changepwd.cancel.esc",
+      "titleRu": "Отмена",
+      "titleEn": "Cancel",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "ChangePasswordWindow",
+        "control": "CancelButton"
+      },
+      "whenActive": "Change password window active",
+      "kind": "default",
+      "source": [
+        "ChangePasswordWindow.xaml: Cancel button IsCancel=True"
+      ],
+      "notes": "WPF IsCancel default behavior."
+    },
+    {
+      "id": "changepwd.save.defaultEnter",
+      "titleRu": "Сохранить",
+      "titleEn": "Save",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "ChangePasswordWindow",
+        "control": "SaveButton"
+      },
+      "whenActive": "Change password window active",
+      "kind": "default",
+      "source": [
+        "ChangePasswordWindow.xaml: Save button IsDefault=True"
+      ],
+      "notes": "WPF IsDefault default behavior."
+    },
+    {
+      "id": "folderdlg.cancel.esc",
+      "titleRu": "Отмена",
+      "titleEn": "Cancel",
+      "gestures": [
+        "Escape"
+      ],
+      "scope": {
+        "window": "FolderDialog",
+        "control": "CancelButton"
+      },
+      "whenActive": "Folder dialog active",
+      "kind": "default",
+      "source": [
+        "FolderDialog.xaml: Cancel button IsCancel=True"
+      ],
+      "notes": "WPF IsCancel default behavior."
+    },
+    {
+      "id": "folderdlg.save.defaultEnter",
+      "titleRu": "Сохранить",
+      "titleEn": "Save",
+      "gestures": [
+        "Enter"
+      ],
+      "scope": {
+        "window": "FolderDialog",
+        "control": "SaveButton"
+      },
+      "whenActive": "Folder dialog active",
+      "kind": "default",
+      "source": [
+        "FolderDialog.xaml: Save button IsDefault=True"
+      ],
+      "notes": "WPF IsDefault default behavior."
+    },
+    {
+      "id": "help.open",
+      "titleRu": "Справка",
+      "titleEn": "Help",
+      "gestures": [
+        "F1"
+      ],
+      "scope": {
+        "window": "MainWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Always",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: help.open",
+        "HotkeysInstaller.cs: applies Window.InputBindings"
+      ],
+      "notes": "Opens HelpWindow (built-in help). Also available from MainWindow menu: Menu → Help.",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "help.open",
+      "titleRu": "Справка",
+      "titleEn": "Help",
+      "gestures": [
+        "F1"
+      ],
+      "scope": {
+        "window": "EntryWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Always",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: help.open",
+        "HotkeysInstaller.cs: applies Window.InputBindings"
+      ],
+      "notes": "Opens HelpWindow (built-in help). Also available from MainWindow menu: Menu → Help.",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "help.open",
+      "titleRu": "Справка",
+      "titleEn": "Help",
+      "gestures": [
+        "F1"
+      ],
+      "scope": {
+        "window": "SettingsWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Always",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: help.open",
+        "HotkeysInstaller.cs: applies Window.InputBindings"
+      ],
+      "notes": "Opens HelpWindow (built-in help). Also available from MainWindow menu: Menu → Help.",
+      "inputPolicy": "AllowEverywhere"
+    },
+    {
+      "id": "help.open",
+      "titleRu": "Справка",
+      "titleEn": "Help",
+      "gestures": [
+        "F1"
+      ],
+      "scope": {
+        "window": "PasswordGeneratorWindow",
+        "control": "(window-level)"
+      },
+      "whenActive": "Always",
+      "kind": "binding",
+      "source": [
+        "HotkeysCatalog.cs: help.open",
+        "HotkeysInstaller.cs: applies Window.InputBindings"
+      ],
+      "notes": "Opens HelpWindow (built-in help). Also available from MainWindow menu: Menu → Help.",
+      "inputPolicy": "AllowEverywhere"
+    }
+  ]
+}

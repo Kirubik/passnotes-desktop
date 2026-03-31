@@ -1,0 +1,8 @@
+<UserControl x:Class="PassNotes.AppMessageContentHostedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer Style="{StaticResource BaselineDialogBodyScrollViewer}">
+        <TextBlock x:Name="MessageTextBlock"
+                   TextWrapping="Wrap"/>
+    </ScrollViewer>
+</UserControl>
