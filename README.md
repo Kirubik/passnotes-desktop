@@ -80,8 +80,6 @@ Notes:
 - `docs/RELEASE_CHECKLIST.md` — maintainer release/publish checklist
 - `docs/RELEASE_NOTES.md` — current release summary
 
-Some files in `docs/` are maintainer-facing planning and status documents. They are kept intentionally for project tracking, but they are not required to build or use the app.
-
 ## Current limitations
 
 - No built-in cloud sync
