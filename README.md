@@ -20,6 +20,28 @@ PassNotes Desktop is a local Windows app for storing passwords, notes, comments,
 - tray support, hotkeys, search, and multi-select workflows;
 - multiple runtime themes for the app-owned WPF UI.
 
+## Screenshots
+
+Main window
+
+![Main window](assets/screenshots/main-window.png)
+
+Edit entry dialog
+
+![Edit entry dialog](assets/screenshots/entry-editor.png)
+
+Built-in help
+
+![Built-in help](assets/screenshots/help-window.png)
+
+General settings
+
+![General settings](assets/screenshots/settings-general.png)
+
+Password generator
+
+![Password generator](assets/screenshots/password-generator.png)
+
 ## Security and data model
 
 - By default, application data is stored under `%APPDATA%\PassNotes`.
@@ -62,34 +84,58 @@ Windows convenience launcher:
 ## Create a release publish folder
 
 ```powershell
-dotnet publish .\PassNotes.csproj -c Release -o .\artifacts\publish\win-x64
+dotnet publish .\PassNotes.csproj -c Release -r win-x64 --self-contained true -o .\artifacts\publish\win-x64
 ```
 
 Notes:
 
 - `artifacts/` is a local output folder and is ignored by Git.
-- The current public-ready repository snapshot does not include a dedicated installer pipeline yet.
-- Installer/distribution work is planned as a separate next route after repository publication prep.
+- The current working tree includes an installer build route based on `Inno Setup`.
+- The repeatable installer command is:
+
+```powershell
+.\build\build-installer.ps1
+```
+
+- The script creates a self-contained `win-x64` publish folder and then builds the installer into `artifacts\installer\`.
+- The repeatable Boosty-ready distribution command is:
+
+```powershell
+.\build\build-distribution.ps1
+```
+
+- The distribution script rebuilds the publish/installer artifacts and then creates `artifacts\distribution\` with:
+  - `PassNotesDesktopSetup_<version>.exe`
+  - `PassNotesDesktop_<version>_portable.zip`
+  - `INSTALL_RU.txt`
+  - `SHA256SUMS.txt`
+  - `BOOSTY_POST_RU.txt`
+  - `BOOSTY_HANDOFF_RU.txt`
+- Code signing is not included in the current route yet.
 
 ## Repository layout
 
 - `PassNotes.csproj` — main WPF project file
+- `assets/screenshots/` — public UI screenshots used by the GitHub README
 - `Themes/` — runtime theme dictionaries and shared baseline resources
 - `Resources/` — strings, icons, support assets, app icon assets
 - `docs/help/` — user-facing RU/EN help content bundled with the app
 - `docs/RELEASE_CHECKLIST.md` — maintainer release/publish checklist
 - `docs/RELEASE_NOTES.md` — current release summary
 
+Some files in `docs/` are maintainer-facing planning and status documents. They are kept intentionally for project tracking, but they are not required to build or use the app.
+
 ## Current limitations
 
 - No built-in cloud sync
 - No plaintext JSON export
-- No installer in the current working tree
+- Installer/distribution route is currently unsigned, so Windows SmartScreen may warn on first run
+- Version-to-version upgrade verification is still a separate next step
 - Windows-only target because this is a WPF desktop app
 
 ## Roadmap focus
 
-- installer/distribution route after repository publication prep;
+- version-to-version upgrade verification and code-signing decisions;
 - continued release hardening and packaging cleanup;
 - further polish of the current desktop UX and documentation.
 
